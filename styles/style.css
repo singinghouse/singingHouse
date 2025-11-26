@@ -1,1 +1,147 @@
+/* -------------------------------------
+   🎨 1. Brand Variables（品牌色設定）
+-------------------------------------- */
+:root {
+  --ink: #2d2d2d; 
+  --bg-main: #cfb9b7; 
+  --bg-soft: #e8d7d5; 
+  --panel: #f4e8e7;  
+  --accent: #b58f84;
+
+  --content-max: 1100px;
+}
+
+/* -------------------------------------
+   🖼 2. Global Reset
+-------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans TC", sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* -------------------------------------
+   🌐 3. Layout Helpers
+-------------------------------------- */
+.container {
+  max-width: var(--content-max);
+  margin: auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--ink);
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+/* -------------------------------------
+   🧱 4. Cards（卡片區塊）
+-------------------------------------- */
+.card {
+  background: var(--panel);
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+/* -------------------------------------
+   🧭 5. Header（導覽列）
+-------------------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: rgba(207,185,183,0.88);
+  padding: 16px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--content-max);
+  margin: auto;
+  padding: 0 20px;
+}
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* -------------------------------------
+   🎬 6. Hero Section（之後放影片）
+-------------------------------------- */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 影片容器 */
+.hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* Hero文字 */
+.hero-title {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+/* -------------------------------------
+   🎥 7. Parallax（視差滾動結構）
+   之後我們會正式補上 JS 版本
+-------------------------------------- */
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* -------------------------------------
+   📱 8. RWD — 手機 & 桌機（只保留兩種）
+-------------------------------------- */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .section-title { font-size: 1.8rem; }
+  nav a { margin-left: 12px; }
+}
+
+/* 桌機到 4K 都用同一套，不分太細 */
 
