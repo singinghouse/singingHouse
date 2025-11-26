@@ -1,15 +1,18 @@
-/* 1. Brand Variables */
+/* -------------------------------
+   Global Variables
+---------------------------------*/
 :root {
   --ink: #2d2d2d;
   --bg-main: #cfb9b7;
   --bg-soft: #e6d1cf;
   --panel: #f4e8e7;
-  --accent: #b58f84;
 
-  --content-max: 980px;
+  --content-max: 1080px; /* 讓版面更寬，接近 WP 效果 */
 }
 
-/* 2. Reset & Base */
+/* -------------------------------
+   Base Reset
+---------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -19,670 +22,290 @@
 body {
   background: var(--bg-main);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans TC", sans-serif;
-  font-size: 19px;         /* 整體字級大一號，接近 WP 版 */
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  font-size: 24px;          /* 原本 16 → 24（1.5 倍） */
   line-height: 1.8;
-  overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-main {
-  padding-top: 64px;
-}
-
-/* 3. Layout helpers */
+/* -------------------------------
+   Helper Layout
+---------------------------------*/
 .container {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 28px;
 }
 
 .section {
-  padding: 104px 0;
+  padding: 150px 0;
 }
 
-.section-label {
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 14px;
+/* -------------------------------
+   Typography Scaling
+---------------------------------*/
+
+/* 1.5x 內文 */
+.section-text,
+.past-body,
+.benefit-body,
+.booking-text,
+.cta-sub,
+.about-arch-inner,
+.who-arch-inner,
+.booking-note {
+  font-size: 24px;    /* 原本約 16 → ×1.5 = 24 */
+  line-height: 1.9;
+  color: #5a4a46;
 }
 
+/* 2x 標題 / 區塊標語 */
 .section-title {
-  font-size: 40px;
+  font-size: 64px;    /* 原 32 → ×2 */
   font-weight: 800;
-  margin-bottom: 18px;
-  line-height: 1.3;
-}
-
-.section-text {
-  font-size: 19px;
-  color: #5e4f48;
-  margin-bottom: 12px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 26px;
-  border-radius: 999px;
-  border: 1px solid rgba(45, 45, 45, 0.16);
-  font-size: 17px;
-  cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.btn-primary {
-  background: #c19a8c;
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
-}
-
-.btn-outline {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(45, 45, 45, 0.16);
-}
-
-.btn-small {
-  padding: 9px 18px;
-  font-size: 15px;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
-}
-
-/* 4. Header / Nav */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-  background: rgba(207, 185, 183, 0.96);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-nav {
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: var(--content-max);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.nav-left {
-  display: flex;
-  align-items: center;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo-mark {
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: #2d2d2d;
-  display: inline-block;
-}
-
-.nav-logo-text {
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 34px;
-}
-
-.nav-menu a {
-  position: relative;
-  padding: 4px 0;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.nav-menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background: var(--ink);
-  opacity: 0.4;
-  transition: width 0.18s ease;
-}
-
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
-.nav-icon {
-  font-size: 18px;
-  opacity: 0.5;
-}
-
-/* 5. Hero */
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 520px;
-  display: flex;
-  align-items: stretch;
-  color: #fff;
-  overflow: hidden;
-}
-
-.hero-video-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background: #000;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translateY(0);
-  transition: transform 0.08s linear;
-  filter: brightness(0.9) contrast(1.02) saturate(0.9);
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 10% 0%, rgba(247, 236, 225, 0.7) 0, transparent 55%),
-    radial-gradient(circle at 90% 100%, rgba(130, 140, 155, 0.55) 0, transparent 55%);
-  mix-blend-mode: soft-light;
-  z-index: -1;
-}
-
-.hero-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.hero-center-title {
-  text-align: center;
-}
-
-.hero-center-text {
-  font-size: clamp(32px, 5vw, 42px);
-  letter-spacing: 0.24em;
-  text-indent: 0.24em;
-  text-transform: uppercase;
-}
-
-/* 6. Section：你的過去 = 現在的你？ */
-.section-past {
-  background: var(--bg-main);
-}
-
-.past-layout {
-  display: grid;
-  gap: 52px;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: center;
+  margin-bottom: 26px;
 }
 
 .past-title {
-  font-size: 44px;
-  margin-bottom: 20px;
+  font-size: 70px;    /* 原 35 → ×2 */
   font-weight: 800;
 }
 
 .past-subquote {
-  font-size: 26px;
+  font-size: 44px;    /* 原 22 → ×2 */
   margin-bottom: 22px;
 }
 
-.past-body {
-  font-size: 19px;
-  color: #5e4f48;
-  margin-bottom: 12px;
+.benefit-title {
+  font-size: 52px;    /* 原 26 → ×2 */
+  margin-bottom: 18px;
 }
 
-.past-cta {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 24px;
-  font-size: 17px;
+.benefit-number {
+  font-size: 36px;    /* 原 18 → ×2 */
+  letter-spacing: 0.3em;
+  opacity: 0.6;
 }
 
-.past-cta-icon {
-  width: 34px;
-  height: 34px;
+.section-label {
+  font-size: 28px;    /* 原 14 → ×2 */
+  letter-spacing: 0.18em;
+  margin-bottom: 20px;
+}
+
+.who-caption {
+  font-size: 48px;    /* 原 24 → ×2 */
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+.cta-title {
+  font-size: 60px;    /* 原 30 → ×2 */
+  font-weight: 800;
+}
+
+/* Booking 區塊 */
+.booking-title {
+  font-size: 52px;    /* 原 26 → ×2 */
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* -------------------------------
+   Buttons
+---------------------------------*/
+.btn {
+  font-size: 30px;        /* 原 15 → ×2 */
+  padding: 16px 34px;
   border-radius: 999px;
-  border: 1px solid rgba(45, 45, 45, 0.6);
-  display: inline-flex;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.btn-primary {
+  background: #2d2d2d;
+  color: #fff;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.25);
+}
+
+/* -------------------------------
+   Header / Navigation
+---------------------------------*/
+header {
+  background: rgba(207,185,183,0.95);
+  backdrop-filter: blur(12px);
+  padding: 16px 0;
+}
+
+nav {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  margin-right: 8px;
-  font-size: 18px;
+}
+
+.nav-logo-text {
+  font-size: 34px;    /* 原 17 → ×2 */
+  font-weight: 700;
+}
+
+.nav-menu a {
+  font-size: 32px;    /* 原 16 → ×2 */
+  position: relative;
+}
+
+/* -------------------------------
+   Hero
+---------------------------------*/
+.hero {
+  height: 100vh;
+  min-height: 680px;
+}
+
+.hero-center-text {
+  font-size: 64px;    /* 原 32 → ×2 */
+  letter-spacing: 0.25em;
+  color: #fff;
+}
+
+/* -------------------------------
+   Past Section
+---------------------------------*/
+.past-layout {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .past-visual-inner {
-  background: #dfd0cc;
-  border-radius: 22px;
-  padding: 52px 26px;
-  text-align: center;
-  font-size: 15px;
-  color: #7a6258;
+  font-size: 22px;
+  padding: 50px 32px;
+  background: #f0e6e4;
+  border-radius: 24px;
 }
 
-/* 7. Section：三段好處長條 */
-.section-benefits {
-  padding: 0;
-}
-
+/* -------------------------------
+   Benefit blocks
+---------------------------------*/
 .benefit-row {
-  position: relative;
-  padding: 96px 0;
-  color: #2d2d2d;
-}
-
-.benefit-row-1 {
-  background: #e6d7d2; /* 之後改成 s02-benefit-01.jpg 背景圖 */
-}
-
-.benefit-row-2 {
-  background: #d9dde2; /* 之後改成 s02-benefit-02.jpg */
-}
-
-.benefit-row-3 {
-  background: #ded6d3; /* 之後改成 s02-benefit-03.jpg */
+  padding: 140px 0;
 }
 
 .benefit-inner {
   display: grid;
-  gap: 36px;
-  grid-template-columns: auto minmax(0, 1fr);
+  gap: 40px;
+  grid-template-columns: auto 1fr;
   align-items: flex-start;
 }
 
-.benefit-number {
-  font-size: 22px;
-  letter-spacing: 0.22em;
-}
-
-.benefit-title {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.benefit-body {
-  font-size: 19px;
-  color: #4c403a;
-  margin-bottom: 20px;
-}
-
-.benefit-cta {
-  display: inline-flex;
-  align-items: center;
-  font-size: 17px;
-}
-
-.benefit-cta-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1px solid rgba(45, 45, 45, 0.7);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 8px;
-}
-
-/* 8. Section：認識心映好事（綠色大半圓） */
-.section-about {
-  background: var(--bg-main);
-}
-
+/* -------------------------------
+   About Section
+---------------------------------*/
 .about-layout {
   display: grid;
-  gap: 52px;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 80px;
+  grid-template-columns: 1fr 0.9fr;
   align-items: center;
-}
-
-.about-visual {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .about-arch {
-  width: 100%;
-  max-width: 360px;
-  aspect-ratio: 3 / 5;
-  background: #3f6a57;
-  border-radius: 999px 999px 26px 26px;
-  padding: 22px;
-  display: flex;
-  align-items: flex-end;
+  max-width: 380px;
+  border-radius: 999px 999px 32px 32px;
 }
 
 .about-arch-inner {
-  background: #f4e8e7;
-  border-radius: 18px;
-  padding: 22px;
-  font-size: 16px;
-  color: #7a655c;
+  font-size: 24px;
+  padding: 26px;
 }
 
-/* 9. Section：誰適合探索潛意識（三個拱門） */
-.section-who {
-  background: var(--bg-soft);
-}
-
+/* -------------------------------
+   WHO (3 arches)
+---------------------------------*/
 .who-arches {
   display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 32px;
-}
-
-.who-item {
-  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .who-arch {
-  width: 100%;
-  max-width: 260px;
-  margin: 0 auto 14px;
-  aspect-ratio: 3 / 5;
-  background: #cfb9b7;
-  border-radius: 999px 999px 26px 26px;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 300px;
+  aspect-ratio: 3/5;
+  border-radius: 999px 999px 30px 30px;
+  padding: 20px;
 }
 
-.who-arch-inner {
-  background: #f4e8e7;
-  border-radius: 999px 999px 18px 18px;
-  padding: 22px;
-  font-size: 15px;
-  color: #7a655c;
-}
-
-.who-caption {
-  color: #4e3f39;
-  font-size: 19px;
-  font-weight: 600;
-}
-
-/* 10. Section：CTA 星光 */
-.section-cta-talk {
-  position: relative;
-  padding: 88px 0;
-  background: #d7c7c4;
-}
-
-.cta-bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.55;
-  background: radial-gradient(circle, #ffffff 0, transparent 60%);
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
+/* -------------------------------
+   CTA star section
+---------------------------------*/
 .cta-talk-inner {
-  position: relative;
   text-align: left;
+  max-width: 900px;
 }
 
-.cta-title {
-  font-size: 40px;
-  margin-bottom: 12px;
-}
-
-.cta-sub {
-  font-size: 19px;
-  color: #4e413a;
-  margin-bottom: 24px;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 26px;
-  border-radius: 999px;
-  background: #2d2d2d;
-  color: #fff;
-  font-size: 17px;
-}
-
-.cta-button-icon {
-  margin-right: 8px;
-}
-
-/* 11. Section：Booking */
-.section-booking {
-  background: var(--panel);
-}
-
+/* -------------------------------
+   Booking Section
+---------------------------------*/
 .booking-layout {
   display: grid;
-  gap: 28px;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 0.9fr;
+  gap: 60px;
   align-items: center;
 }
 
-.booking-title {
-  font-size: 30px;
-  margin-bottom: 12px;
-}
-
-.booking-text {
-  font-size: 19px;
-  color: #5e4f48;
-  margin-bottom: 8px;
-}
-
-.booking-time {
-  font-size: 17px;
-  color: #4e413a;
-  font-weight: 500;
-}
-
-.booking-note {
-  font-size: 15px;
-  color: #7a665c;
-  margin-top: 6px;
-}
-
-/* 12. Footer */
+/* -------------------------------
+   Footer
+---------------------------------*/
 footer {
-  background: #cfb9b7;
-  padding: 24px 0 22px;
-  font-size: 15px;
-  color: #4f403a;
-  border-top: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-/* 左邊：logo + 聯絡資訊 */
-.footer-left {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 220px;
-}
-
-.footer-logo-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer-logo-mark {
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: #2d2d2d;
-  display: inline-block;
+  padding: 40px 0 30px;
+  font-size: 22px;   /* 全部放大 1.5x */
 }
 
 .footer-logo-text {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 30px;
 }
 
-.footer-contact a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* 中間：版權 + 連結 */
-.footer-center {
-  text-align: center;
-  flex: 1;
-  min-width: 260px;
-}
-
-.footer-copy {
-  font-size: 13px;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-}
-
+.footer-copy,
 .footer-legal-link {
-  font-size: 13px;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* 右邊：社群 icon */
-.footer-right {
-  display: flex;
-  justify-content: flex-end;
-  min-width: 180px;
-}
-
-.footer-social {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 20px;  /* 原 13 → 20 (≈ 1.5x) */
 }
 
 .footer-social-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid rgba(45, 45, 45, 0.35);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
 }
 
-/* 13. RWD */
-@media (max-width: 767px) {
-  body {
-    font-size: 17px;
-  }
-
+/* -------------------------------
+   RWD
+---------------------------------*/
+@media (max-width: 768px) {
   .section {
-    padding: 80px 0;
+    padding: 120px 0;
   }
 
-  .past-layout,
-  .benefit-inner,
-  .about-layout,
-  .who-arches,
-  .booking-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .past-layout,
-  .about-layout,
-  .booking-layout {
-    gap: 32px;
+  .container {
+    padding: 0 20px;
   }
 
   .section-title {
-    font-size: 32px;
+    font-size: 42px;
   }
 
   .past-title {
-    font-size: 34px;
+    font-size: 48px;
   }
 
-  .past-subquote {
-    font-size: 22px;
+  .hero-center-text {
+    font-size: 42px;
   }
 
-  .benefit-title {
-    font-size: 26px;
-  }
-
-  .cta-title {
-    font-size: 32px;
-  }
-
-  nav {
-    padding: 0 16px;
-  }
-
-  .nav-menu {
-    display: none; /* 手機先隱藏右側選單，之後可以做漢堡選單 */
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-center {
-    text-align: left;
-  }
-
-  .footer-right {
-    width: 100%;
-    justify-content: flex-start;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-inner {
-    padding: 96px 20px 104px;
+  /* 手機版改成單欄 */
+  .past-layout,
+  .benefit-inner,
+  .about-layout,
+  .booking-layout {
+    grid-template-columns: 1fr;
   }
 }
