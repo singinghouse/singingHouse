@@ -10,82 +10,79 @@
 
   <!-- 導覽列 -->
   <header>
-    <div class="container nav">
+    <nav>
       <div class="nav-left">
-        <span>心映好事</span>
-        <span class="nav-brand-sub">SINGING TSAI</span>
+        <span class="nav-logo-mark">✶</span>
+        <div class="nav-brand">
+          <span class="nav-brand-main">心映好事</span>
+          <span class="nav-brand-sub">SINGING TSAI</span>
+        </div>
       </div>
-      <nav class="nav-menu">
+      <div class="nav-menu">
         <a href="#about">關於心怡</a>
         <a href="#content">宇宙放映室</a>
         <a href="#content">心映日誌</a>
         <a href="#booking">催眠療程 · 預約</a>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <!-- 1. Hero 影片區（之後這裡會加視差） -->
-    <section class="hero-wrap">
-      <div class="hero-sticky">
-        <div class="hero">
-          <!-- 替換成你的影片路徑：assets/video/hero-home.mp4 -->
-          <video class="hero-video"
-                 autoplay
-                 muted
-                 loop
-                 playsinline>
-            <source src="assets/video/hero-home.mp4" type="video/mp4" />
-          </video>
-          <div class="hero-overlay"></div>
+    <!-- 1. Hero：影片區 -->
+    <section class="hero" id="top">
+      <div class="hero-video-wrap">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <!-- 把這個路徑換成你實際影片檔名 -->
+          <source src="assets/video/hero-home.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
 
-          <div class="container hero-inner">
-            <div class="hero-content">
-              <div class="hero-kicker">心映好事 · 潛意識療癒空間</div>
-              <h1 class="hero-title">那些撐過去的事，還在影響你。</h1>
-              <p class="hero-sub">
-                在這裡，我們一起慢慢看見、整理，<br/>
-                把注意力放回你自己身上。
-              </p>
-              <div class="hero-buttons">
-                <a href="#booking" class="btn btn-primary">了解一對一個案</a>
-                <a href="#benefits" class="btn btn-secondary">先看看可以怎麼陪你</a>
-              </div>
-            </div>
+      <div class="hero-inner container">
+        <div class="hero-content">
+          <div class="kicker">心映好事 · 潛意識療癒空間</div>
+          <h1 class="hero-title">那些撐過去的事，還在影響你。</h1>
+          <p class="hero-sub">
+            在這裡，我們一起慢慢看見、整理，<br />
+            把注意力放回你自己身上。
+          </p>
+          <div class="hero-buttons">
+            <a href="#booking" class="btn btn-primary">了解一對一個案</a>
+            <a href="#benefits" class="btn btn-outline">先看看可以怎麼陪你</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. 開場提問區 -->
-    <section class="intro-section">
-      <div class="container intro-inner">
-        <h2 class="intro-title">你也覺得，自己好像卡在同一個地方嗎？</h2>
-        <p class="intro-sub">
+    <!-- 2. 開場提問 -->
+    <section class="section section-intro" id="intro">
+      <div class="container narrow">
+        <h2 class="section-title">你也覺得，自己好像卡在同一個地方嗎？</h2>
+        <p class="section-text">
           明明很努力，卻常回到同樣的情緒與關係裡。
         </p>
       </div>
     </section>
 
     <!-- 3. 催眠能幫助你什麼 -->
-    <section class="benefits-section" id="benefits">
+    <section class="section section-benefits" id="benefits">
       <div class="container">
-        <div class="benefits-header">
-          <div class="section-label">Hypnotherapy</div>
+        <div class="section-header">
+          <div class="section-label">HYPNOTHERAPY</div>
           <h2 class="section-title">催眠，可以幫你做到的事</h2>
         </div>
-        <div class="benefits-grid">
-          <div class="benefit-card">
+        <div class="grid grid-3">
+          <div class="card benefit">
             <div class="benefit-label">01</div>
             <div class="benefit-title">看見真正的卡點</div>
             <p class="benefit-text">找到一直重複發生的源頭。</p>
           </div>
-          <div class="benefit-card">
+          <div class="card benefit">
             <div class="benefit-label">02</div>
             <div class="benefit-title">溫柔整理過去</div>
             <p class="benefit-text">不是逼自己放下，而是慢慢鬆開。</p>
           </div>
-          <div class="benefit-card">
+          <div class="card benefit">
             <div class="benefit-label">03</div>
             <div class="benefit-title">活得更像自己</div>
             <p class="benefit-text">從「配合別人」回到「替自己選擇」。</p>
@@ -95,78 +92,72 @@
     </section>
 
     <!-- 4. 認識心映好事 / 關於心怡 -->
-    <section class="about-section" id="about">
-      <div class="container about-inner">
-        <div class="about-text">
-          <div class="section-label">About</div>
+    <section class="section section-about" id="about">
+      <div class="container grid grid-2 about-grid">
+        <div>
+          <div class="section-label">ABOUT</div>
           <h2 class="section-title">這裡，是給你暫時放下堅強的地方。</h2>
-          <p>
+          <p class="section-text">
             我是 Hsinyi，NGH 認證催眠師，也是插畫創作者。
           </p>
-          <p>
+          <p class="section-text">
             我想陪你，一起把那些沒被說完的故事，好好放下。
           </p>
-          <a href="/about" class="btn btn-secondary" style="margin-top: 12px; padding-inline: 18px;">
-            看完整故事
-          </a>
+          <a href="/about" class="btn btn-outline btn-small">看完整故事</a>
         </div>
-        <div class="about-media-placeholder">
-          之後可放：你的照片、插畫、或一張靜態設計圖。<br/>
-          （暫時先當占位圖使用）
+        <div class="card about-placeholder">
+          之後可以放：你的照片、插畫或完整設計稿。<br />
+          目前先當占位圖。
         </div>
       </div>
     </section>
 
-    <!-- 5. 誰適合探索潛意識？ -->
-    <section class="who-section">
+    <!-- 5. 誰適合探索潛意識 -->
+    <section class="section section-who">
       <div class="container">
-        <div class="section-label">For You</div>
+        <div class="section-label">FOR YOU</div>
         <h2 class="section-title">如果你是這樣的人，這裡會很適合你</h2>
-        <div class="who-grid">
-          <div class="who-card">
+        <div class="grid grid-3">
+          <div class="card who-card">
             常覺得卡住，卻說不出卡在哪裡。
           </div>
-          <div class="who-card">
+          <div class="card who-card">
             過去的事，一想到還是很痛。
           </div>
-          <div class="who-card">
+          <div class="card who-card">
             想活得更像自己，不再只是配合。
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. 精選內容區：Podcast + Blog -->
-    <section class="content-section" id="content">
+    <!-- 6. 精選內容：Podcast + Blog -->
+    <section class="section section-content" id="content">
       <div class="container">
-        <div class="section-label">Stay Close</div>
+        <div class="section-label">STAY CLOSE</div>
         <h2 class="section-title">先從聽聽／看看開始</h2>
-        <div class="content-inner">
-          <div class="content-block">
+        <div class="grid grid-2">
+          <div class="card content-card">
             <div class="content-title">心映宇宙放映室</div>
             <p class="content-text">
               用聊天的方式，陪你聽聽別人的故事。
             </p>
-            <a href="/podcast" class="btn btn-secondary">
-              前往 Podcast
-            </a>
+            <a href="/podcast" class="btn btn-outline btn-small">前往 Podcast</a>
           </div>
-          <div class="content-block">
+          <div class="card content-card">
             <div class="content-title">心映日誌</div>
             <p class="content-text">
               把情緒拆成一小段一小段慢慢讀。
             </p>
-            <a href="/blog" class="btn btn-secondary">
-              看更多文章
-            </a>
+            <a href="/blog" class="btn btn-outline btn-small">看更多文章</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 7. 預約 Banner -->
-    <section class="booking-section" id="booking">
-      <div class="container booking-inner">
+    <section class="section section-booking" id="booking">
+      <div class="container booking-grid">
         <div>
           <h2 class="booking-title">想聊聊你的故事嗎？</h2>
           <p class="booking-text">
@@ -177,7 +168,7 @@
           </p>
         </div>
         <div class="booking-actions">
-          <!-- TODO: 換成你的官方 LINE 連結 -->
+          <!-- TODO：換成你的官方 LINE 連結 -->
           <a href="https://line.me/R/ti/p/@yourlineid" target="_blank" rel="noopener" class="btn btn-primary">
             透過 LINE 詢問預約
           </a>
@@ -189,33 +180,51 @@
     </section>
   </main>
 
-  <!-- 8. Footer -->
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div>
-          <div class="footer-brand">心映好事</div>
-          <div>When your heart shifts, life reflects.</div>
-        </div>
-        <div class="footer-links">
-          <span>Contact：hello@singingtsai.com</span>
-          <span>Instagram</span>
-          <span>Podcast</span>
-          <span>Facebook</span>
-        </div>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">心映好事</div>
+        <div class="footer-tagline">When your heart shifts, life reflects.</div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-meta">
+        <div>Contact：hello@singingtsai.com</div>
         <div>© <span id="year"></span> 心映好事 · Singing Tsai. All rights reserved.</div>
-        <div>本站內容僅為情緒陪伴與自我探索，不替代專業醫療或心理治療。</div>
+        <div class="footer-note">本站內容僅為情緒陪伴與自我探索，不替代專業醫療或心理治療。</div>
       </div>
     </div>
-
-    <script>
-      // 簡單填入當前年份
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
   </footer>
 
+  <!-- 小小 JS：年份 & Hero 視差位移 -->
+  <script>
+    // 年份
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hero 視差：影片稍微位移（手機也相容）
+    const hero = document.querySelector('.hero');
+    const heroVideo = document.querySelector('.hero-video');
+    const heroContent = document.querySelector('.hero-content');
+
+    function onScroll() {
+      if (!hero) return;
+      const rect = hero.getBoundingClientRect();
+      const h = rect.height || 1;
+      // progress 0~1：0 在最上，1 在最下
+      const progress = Math.min(1, Math.max(0, (0 - rect.top) / h));
+
+      const videoOffset = progress * -40;   // 影片微微往上
+      const contentOffset = progress * 20;  // 文字微微往下
+
+      if (heroVideo) {
+        heroVideo.style.transform = `translateY(${videoOffset}px)`;
+      }
+      if (heroContent) {
+        heroContent.style.transform = `translateY(${contentOffset}px)`;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
 </body>
 </html>
-
