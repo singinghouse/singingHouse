@@ -6,7 +6,7 @@
   --panel: #f4e8e7;
   --accent: #b58f84;
 
-  --content-max: 1080px;
+  --content-max: 980px;
 }
 
 /* 2. Reset & Base */
@@ -20,8 +20,8 @@ body {
   background: var(--bg-main);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans TC", sans-serif;
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 19px;         /* 整體字級大一號，接近 WP 版 */
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
@@ -47,28 +47,28 @@ main {
 }
 
 .section {
-  padding: 96px 0;
+  padding: 104px 0;
 }
 
 .section-label {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 800;
-  margin-bottom: 16px;
-  line-height: 1.25;
+  margin-bottom: 18px;
+  line-height: 1.3;
 }
 
 .section-text {
-  font-size: 17px;
+  font-size: 19px;
   color: #5e4f48;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 /* Buttons */
@@ -76,10 +76,10 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: 999px;
   border: 1px solid rgba(45, 45, 45, 0.16);
-  font-size: 16px;
+  font-size: 17px;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
@@ -98,7 +98,7 @@ main {
 
 .btn-small {
   padding: 9px 18px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .btn:hover {
@@ -126,7 +126,6 @@ nav {
   max-width: var(--content-max);
   margin: 0 auto;
   padding: 0 20px;
-  font-size: 16px;
 }
 
 .nav-left {
@@ -155,7 +154,7 @@ nav {
 
 .nav-menu {
   display: flex;
-  gap: 32px;
+  gap: 34px;
 }
 
 .nav-menu a {
@@ -235,7 +234,7 @@ nav {
 }
 
 .hero-center-text {
-  font-size: clamp(30px, 5vw, 40px);
+  font-size: clamp(32px, 5vw, 42px);
   letter-spacing: 0.24em;
   text-indent: 0.24em;
   text-transform: uppercase;
@@ -248,24 +247,24 @@ nav {
 
 .past-layout {
   display: grid;
-  gap: 48px;
+  gap: 52px;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   align-items: center;
 }
 
 .past-title {
-  font-size: 40px;
-  margin-bottom: 18px;
+  font-size: 44px;
+  margin-bottom: 20px;
   font-weight: 800;
 }
 
 .past-subquote {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 26px;
+  margin-bottom: 22px;
 }
 
 .past-body {
-  font-size: 17px;
+  font-size: 19px;
   color: #5e4f48;
   margin-bottom: 12px;
 }
@@ -273,28 +272,28 @@ nav {
 .past-cta {
   display: inline-flex;
   align-items: center;
-  margin-top: 22px;
-  font-size: 16px;
+  margin-top: 24px;
+  font-size: 17px;
 }
 
 .past-cta-icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
   border: 1px solid rgba(45, 45, 45, 0.6);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-right: 8px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .past-visual-inner {
   background: #dfd0cc;
   border-radius: 22px;
-  padding: 48px 24px;
+  padding: 52px 26px;
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
   color: #7a6258;
 }
 
@@ -305,7 +304,7 @@ nav {
 
 .benefit-row {
   position: relative;
-  padding: 88px 0;
+  padding: 96px 0;
   color: #2d2d2d;
 }
 
@@ -323,7 +322,7 @@ nav {
 
 .benefit-inner {
   display: grid;
-  gap: 32px;
+  gap: 36px;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: flex-start;
 }
@@ -334,25 +333,25 @@ nav {
 }
 
 .benefit-title {
-  font-size: 30px;
-  margin-bottom: 14px;
+  font-size: 32px;
+  margin-bottom: 16px;
 }
 
 .benefit-body {
-  font-size: 17px;
+  font-size: 19px;
   color: #4c403a;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .benefit-cta {
   display: inline-flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .benefit-cta-icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
   border: 1px solid rgba(45, 45, 45, 0.7);
   display: inline-flex;
@@ -368,7 +367,7 @@ nav {
 
 .about-layout {
   display: grid;
-  gap: 48px;
+  gap: 52px;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   align-items: center;
 }
@@ -380,11 +379,11 @@ nav {
 
 .about-arch {
   width: 100%;
-  max-width: 340px;
+  max-width: 360px;
   aspect-ratio: 3 / 5;
   background: #3f6a57;
   border-radius: 999px 999px 26px 26px;
-  padding: 20px;
+  padding: 22px;
   display: flex;
   align-items: flex-end;
 }
@@ -392,8 +391,8 @@ nav {
 .about-arch-inner {
   background: #f4e8e7;
   border-radius: 18px;
-  padding: 20px;
-  font-size: 14px;
+  padding: 22px;
+  font-size: 16px;
   color: #7a655c;
 }
 
@@ -404,24 +403,23 @@ nav {
 
 .who-arches {
   display: grid;
-  gap: 28px;
+  gap: 32px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
 .who-item {
   text-align: center;
-  font-size: 14px;
 }
 
 .who-arch {
   width: 100%;
   max-width: 260px;
-  margin: 0 auto 12px;
+  margin: 0 auto 14px;
   aspect-ratio: 3 / 5;
   background: #cfb9b7;
   border-radius: 999px 999px 26px 26px;
-  padding: 14px;
+  padding: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -430,21 +428,21 @@ nav {
 .who-arch-inner {
   background: #f4e8e7;
   border-radius: 999px 999px 18px 18px;
-  padding: 20px;
-  font-size: 13px;
+  padding: 22px;
+  font-size: 15px;
   color: #7a655c;
 }
 
 .who-caption {
   color: #4e3f39;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
 }
 
 /* 10. Section：CTA 星光 */
 .section-cta-talk {
   position: relative;
-  padding: 80px 0;
+  padding: 88px 0;
   background: #d7c7c4;
 }
 
@@ -463,24 +461,24 @@ nav {
 }
 
 .cta-title {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 40px;
+  margin-bottom: 12px;
 }
 
 .cta-sub {
-  font-size: 17px;
+  font-size: 19px;
   color: #4e413a;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: 999px;
   background: #2d2d2d;
   color: #fff;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .cta-button-icon {
@@ -494,30 +492,30 @@ nav {
 
 .booking-layout {
   display: grid;
-  gap: 24px;
+  gap: 28px;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   align-items: center;
 }
 
 .booking-title {
-  font-size: 26px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  margin-bottom: 12px;
 }
 
 .booking-text {
-  font-size: 17px;
+  font-size: 19px;
   color: #5e4f48;
   margin-bottom: 8px;
 }
 
 .booking-time {
-  font-size: 16px;
+  font-size: 17px;
   color: #4e413a;
   font-weight: 500;
 }
 
 .booking-note {
-  font-size: 14px;
+  font-size: 15px;
   color: #7a665c;
   margin-top: 6px;
 }
@@ -526,7 +524,7 @@ nav {
 footer {
   background: #cfb9b7;
   padding: 24px 0 22px;
-  font-size: 14px;
+  font-size: 15px;
   color: #4f403a;
   border-top: 1px solid rgba(0, 0, 0, 0.04);
 }
@@ -579,13 +577,13 @@ footer {
 }
 
 .footer-copy {
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 4px;
   text-transform: uppercase;
 }
 
 .footer-legal-link {
-  font-size: 12px;
+  font-size: 13px;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -619,11 +617,11 @@ footer {
 /* 13. RWD */
 @media (max-width: 767px) {
   body {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .section {
-    padding: 72px 0;
+    padding: 80px 0;
   }
 
   .past-layout,
@@ -641,23 +639,23 @@ footer {
   }
 
   .section-title {
-    font-size: 30px;
-  }
-
-  .past-title {
     font-size: 32px;
   }
 
+  .past-title {
+    font-size: 34px;
+  }
+
   .past-subquote {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .benefit-title {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .cta-title {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   nav {
