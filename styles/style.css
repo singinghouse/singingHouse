@@ -1,6 +1,17 @@
-/* ----------------------------------------------------
-   RESET
----------------------------------------------------- */
+/* ---------------------------------
+   Global variables
+----------------------------------*/
+:root {
+  --ink: #2d2d2d;
+  --bg-main: #cfb9b7;
+  --bg-soft: #e6d1cf;
+  --panel: #f4e8e7;
+  --content-max: 1080px;
+}
+
+/* ---------------------------------
+   Reset & base
+----------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -8,86 +19,227 @@
 }
 
 body {
-  font-family: "Noto Sans TC", sans-serif;
-  background: #cfb9b7;
-  color: #2d2d2d;
-  line-height: 1.8;
+  background: var(--bg-main);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  font-size: 24px;      /* 內文放大版 */
+  line-height: 1.9;
 }
 
-/* container */
+main {
+  padding-top: 72px;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------------------------
+   Layout helpers
+----------------------------------*/
 .container {
-  max-width: 1080px;
+  max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
 }
 
-/* ----------------------------------------------------
-   HEADER
----------------------------------------------------- */
+.section {
+  padding: 140px 0;
+}
+
+/* ---------------------------------
+   Typography
+----------------------------------*/
+.section-text,
+.past-body,
+.benefit-body,
+.about-arch-inner,
+.booking-text,
+.booking-note,
+.cta-sub {
+  font-size: 24px;
+  color: #5a4a46;
+  margin-bottom: 10px;
+}
+
+.section-label {
+  font-size: 28px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8e6f66;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 26px;
+}
+
+.past-title {
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.past-subquote {
+  font-size: 44px;
+  margin-bottom: 18px;
+}
+
+.benefit-title {
+  font-size: 52px;
+  margin-bottom: 16px;
+}
+
+.benefit-number {
+  font-size: 36px;
+  letter-spacing: 0.3em;
+  opacity: 0.7;
+}
+
+.who-caption {
+  font-size: 32px;
+  margin-top: 12px;
+}
+
+.cta-title {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.booking-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* ---------------------------------
+   Buttons
+----------------------------------*/
+.btn,
+.benefit-cta,
+.past-cta,
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 999px;
+  font-size: 26px;
+  border: 1px solid rgba(0,0,0,0.3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary,
+.cta-button {
+  background: #2d2d2d;
+  color: #fff;
+  border-color: #2d2d2d;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.22);
+}
+
+.btn-outline,
+.past-cta,
+.benefit-cta {
+  background: transparent;
+  color: #2d2d2d;
+}
+
+/* 小圓 icon */
+.past-cta-icon,
+.benefit-cta-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid #2d2d2d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-right: 8px;
+}
+
+/* ---------------------------------
+   Header / nav
+----------------------------------*/
 .site-header {
   position: fixed;
-  top: 0;
-  width: 100%;
+  inset: 0 0 auto 0;
   height: 72px;
-  background: rgba(207,185,183,0.9);
-  display: flex;
-  align-items: center;
-  backdrop-filter: blur(12px);
-  z-index: 99;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: rgba(207,185,183,0.96);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 .nav {
-  width: 100%;
+  height: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
   align-items: center;
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   color: inherit;
 }
 
 .nav-logo-mark {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
   background: #2d2d2d;
 }
 
 .nav-logo-text {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 700;
 }
 
 .nav-menu {
   display: flex;
-  gap: 28px;
+  gap: 32px;
 }
 
 .nav-menu a {
-  font-size: 20px;
+  font-size: 32px;
+  font-weight: 600;
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 
-/* ----------------------------------------------------
-   HERO
----------------------------------------------------- */
+/* ---------------------------------
+   Hero
+----------------------------------*/
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 620px;
+  min-height: 680px;
+  color: #fff;
   overflow: hidden;
 }
 
-.hero-video {
+.hero-video-wrap {
   position: absolute;
   inset: 0;
+  z-index: -2;
+  background: #000;
+}
+
+.hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -96,135 +248,348 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.25);
+  background:
+    radial-gradient(circle at 10% 0%, rgba(247,236,225,0.7) 0, transparent 50%),
+    radial-gradient(circle at 90% 100%, rgba(130,140,155,0.55) 0, transparent 55%);
+  mix-blend-mode: soft-light;
+  z-index: -1;
 }
 
-.hero-center {
-  position: relative;
+.hero-inner {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-title {
-  color: white;
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+.hero-center-text {
+  font-size: 64px;
+  letter-spacing: 0.25em;
 }
 
-/* ----------------------------------------------------
-   FOOTER（重建版）
----------------------------------------------------- */
+/* ---------------------------------
+   Section：過去 = 現在
+----------------------------------*/
+.section-past {
+  background: var(--bg-main);
+}
+
+.past-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.past-visual-inner {
+  font-size: 20px;
+  color: #6c5850;
+  background: #e7d7d4;
+  border-radius: 24px;
+  padding: 52px 34px;
+}
+
+/* ---------------------------------
+   Section：三段好處
+----------------------------------*/
+.section-benefits {
+  padding: 0;
+}
+
+.benefit-row {
+  padding: 140px 0;
+}
+
+.benefit-row-1 { background: #e6d7d2; }
+.benefit-row-2 { background: #d9dde2; }
+.benefit-row-3 { background: #ded6d3; }
+
+.benefit-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr);
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* ---------------------------------
+   Section：關於心映好事
+----------------------------------*/
+.section-about {
+  background: var(--bg-main);
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.2fr) minmax(0,0.8fr);
+  gap: 80px;
+  align-items: center;
+}
+
+.about-visual {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-arch {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3 / 5;
+  background: #3f6a57;
+  border-radius: 999px 999px 28px 28px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.about-arch-inner {
+  background: #f4e8e7;
+  border-radius: 22px;
+  padding: 28px;
+}
+
+/* ---------------------------------
+   Section：誰適合探索潛意識？
+----------------------------------*/
+.section-who {
+  background: var(--bg-soft);
+}
+
+.who-arches {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.who-item {
+  text-align: center;
+}
+
+.who-arch {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 14px;
+  aspect-ratio: 3 / 5;
+  background: #cfb9b7;
+  border-radius: 999px 999px 26px 26px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-arch-inner {
+  background: #f4e8e7;
+  border-radius: 999px 999px 22px 22px;
+  padding: 26px;
+}
+
+/* ---------------------------------
+   Section：讓我們談談
+----------------------------------*/
+.section-cta-talk {
+  position: relative;
+  background: #d7c7c4;
+  padding: 90px 0;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0, transparent 60%);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+.cta-talk-inner {
+  position: relative;
+  max-width: 900px;
+}
+
+/* ---------------------------------
+   Section：預約
+----------------------------------*/
+.section-booking {
+  background: var(--panel);
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+  gap: 60px;
+  align-items: center;
+}
+
+.booking-time {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 12px 0 6px;
+}
+
+/* ---------------------------------
+   Footer（字級已調小）
+----------------------------------*/
 .site-footer {
   background: #cfb9b7;
-  padding: 48px 0 56px;
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 24px 0 20px;
+  font-size: 18px;   /* 整體變小 */
+  color: #4f403a;
 }
 
 .footer-inner {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 16px 32px;
 }
 
 /* 左欄 */
 .footer-left {
-  flex: 1;
-  min-width: 260px;
+  flex: 1 1 320px;
+  min-width: 280px;
+  text-align: left;
 }
 
-.footer-logo-wrap {
+.footer-logo-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 6px;
 }
 
 .footer-logo-mark {
   width: 22px;
   height: 22px;
-  border-radius: 50%;
+  border-radius: 999px;
   background: #2d2d2d;
 }
 
 .footer-logo-text {
-  font-size: 26px;
-  font-weight: 800;
+  font-size: 24px;    /* 比標題小一階 */
+  font-weight: 700;
 }
 
 .footer-contact {
-  font-size: 18px;
-  line-height: 1.7;
+  margin: 0;
+  line-height: 1.6;
 }
 
 .footer-contact a {
   color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* 右欄 */
 .footer-right {
-  flex: 1;
-  min-width: 260px;
-  text-align: right;
+  flex: 0 0 360px;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 18px;
+  gap: 10px;
+  text-align: right;
 }
 
+/* 社群 icon */
 .footer-social-row {
   display: flex;
-  gap: 14px;
+  gap: 10px;
 }
 
 .footer-social {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
   border: 1px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  text-decoration: none;
-  color: #2d2d2d;
+  justify-content: center;
   font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .footer-social:hover {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,0,0.06);
 }
 
+/* 版權＋條款 */
 .footer-meta {
   text-align: right;
 }
 
 .footer-copy {
-  font-size: 16px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  font-size: 14px;
 }
 
-.footer-legal {
-  font-size: 16px;
+.footer-legal-link {
+  font-size: 14px;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
-/* ----------------------------------------------------
-   RWD：手機版 Footer
----------------------------------------------------- */
+/* ---------------------------------
+   RWD
+----------------------------------*/
 @media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 110px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .past-layout,
+  .benefit-inner,
+  .about-layout,
+  .booking-layout {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .who-arches {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .nav-menu {
+    display: none; /* 先隱藏手機選單 */
+  }
+
+  .hero-center-text {
+    font-size: 42px;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
+  .past-title {
+    font-size: 48px;
+  }
+
+  /* Footer：手機版全部靠左，順序：
+     logo → 聯絡資訊 → 社群 → 版權＋條款 */
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-meta {
     text-align: left;
+    align-items: flex-start;
   }
 
   .footer-right {
-    align-items: flex-start;
-    text-align: left;
+    flex: 1 1 auto;
   }
 
   .footer-social-row {
