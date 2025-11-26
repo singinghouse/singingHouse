@@ -23,7 +23,7 @@ body {
   background: var(--bg-main);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-  font-size: 24px;      /* 放大版內文字級 */
+  font-size: 24px;      /* 內文放大版 */
   line-height: 1.9;
 }
 
@@ -54,7 +54,7 @@ img, video {
    Typography scale
 ----------------------------------*/
 
-/* 內文：1.5 倍 */
+/* 內文：約 1.5 倍 */
 .section-text,
 .past-body,
 .benefit-body,
@@ -67,7 +67,7 @@ img, video {
   margin-bottom: 10px;
 }
 
-/* 標題：2 倍放大 */
+/* 標題：約 2 倍 */
 .section-label {
   font-size: 28px;
   letter-spacing: 0.18em;
@@ -132,7 +132,7 @@ img, video {
   justify-content: center;
   padding: 14px 32px;
   border-radius: 999px;
-  font-size: 30px;      /* 原本按鈕字也放大 */
+  font-size: 30px;
   border: 1px solid rgba(0,0,0,0.3);
   text-decoration: none;
   cursor: pointer;
@@ -451,7 +451,7 @@ img, video {
 }
 
 /* ---------------------------------
-   Footer（左 logo＋中版權＋右社群）
+   Footer（左上 logo＋左下聯絡／右上社群＋右下版權）
 ----------------------------------*/
 .site-footer {
   background: #cfb9b7;
@@ -461,18 +461,19 @@ img, video {
   color: #4f403a;
 }
 
+/* 外層：兩欄 */
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
   gap: 16px 32px;
 }
 
-/* 左邊 */
+/* 左欄 */
 .footer-left {
-  flex: 1 1 280px;
-  min-width: 260px;
+  flex: 1 1 320px;
+  min-width: 280px;
+  text-align: left;
 }
 
 .footer-logo-row {
@@ -505,30 +506,21 @@ img, video {
   text-underline-offset: 2px;
 }
 
-/* 中間 */
-.footer-center {
-  flex: 1 1 280px;
-  min-width: 260px;
-  text-align: center;
-}
-
-.footer-copy {
-  margin-bottom: 4px;
-}
-
-.footer-legal-link {
-  font-size: 20px;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* 右邊 */
+/* 右欄 */
 .footer-right {
+  flex: 0 0 360px;
+  min-width: 280px;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;   /* 右欄內容靠右 */
   gap: 10px;
-  flex: 0 0 auto;
+  text-align: right;
+}
+
+/* 右上：社群 icon 一排 */
+.footer-social-row {
+  display: flex;
+  gap: 10px;
 }
 
 .footer-social {
@@ -546,6 +538,21 @@ img, video {
 
 .footer-social:hover {
   background: rgba(0,0,0,0.06);
+}
+
+/* 右下：版權＋條款 */
+.footer-meta {
+  text-align: right;
+}
+
+.footer-copy {
+  margin-bottom: 4px;
+}
+
+.footer-legal-link {
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ---------------------------------
@@ -579,19 +586,6 @@ img, video {
     display: none; /* 先隱藏手機選單 */
   }
 
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-center {
-    text-align: left;
-  }
-
-  .footer-right {
-    align-self: flex-start;
-  }
-
   .hero-center-text {
     font-size: 42px;
   }
@@ -602,5 +596,27 @@ img, video {
 
   .past-title {
     font-size: 48px;
+  }
+
+  /* Footer：手機版全部靠左，順序保持：
+     logo → 聯絡資訊 → 社群 icon → 版權＋條款（最後） */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-meta {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footer-right {
+    flex: 1 1 auto;
+  }
+
+  .footer-social-row {
+    justify-content: flex-start;
   }
 }
