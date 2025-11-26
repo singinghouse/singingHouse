@@ -248,51 +248,42 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-inner">
-      <!-- 左邊：logo + 聯絡資訊 -->
-      <div class="footer-left">
-        <div class="footer-logo-row">
-          <!-- 之後可以換成真的 img logo -->
-          <span class="footer-logo-mark"></span>
-          <span class="footer-logo-text">心映好事</span>
-        </div>
-        <div class="footer-contact">
-          蔡心怡/Singing Tsai 客服信箱：
-          <a href="mailto:luckystern16@gmail.com">luckystern16@gmail.com</a>
-          &nbsp;TEL: 02-24516767
-        </div>
-      </div>
+<footer class="site-footer">
+  <div class="footer-inner">
 
-      <!-- 中間：版權文字＋隱私權連結 -->
-      <div class="footer-center">
-        <div class="footer-copy">
-          所有內容版權所有 ©<span id="year"></span> SINGINGTSAI. ALL RIGHTS RESERVED.
-        </div>
-        <a
-          href="https://singingtsai.com/%E9%9A%B1%E7%A7%81%E6%AC%8A%E6%94%BF%E7%AD%96%E8%88%87%E4%BD%BF%E7%94%A8%E6%A2%9D%E6%AC%BE/"
-          target="_blank"
-          rel="noopener"
-          class="footer-legal-link"
-        >
-          隱私權政策與使用條款
-        </a>
+    <!-- 左邊：Logo + 品牌名稱 + 聯絡方式 -->
+    <div class="footer-left">
+      <div class="footer-logo">
+        <!-- 之後把 src 換成你的實際 logo 檔路徑就好 -->
+        <img src="assets/images/logo/logo-main.svg" alt="心映好事 logo">
+        <span class="footer-brand">心映好事</span>
       </div>
-
-      <!-- 右邊：社群 icon -->
-      <div class="footer-right">
-        <div class="footer-social">
-          <!-- 下面的 href 之後你可以換成自己的連結 -->
-          <a href="#" aria-label="Facebook" class="footer-social-icon">f</a>
-          <a href="#" aria-label="Instagram" class="footer-social-icon">ig</a>
-          <a href="#" aria-label="LINE" class="footer-social-icon">line</a>
-          <a href="#" aria-label="YouTube" class="footer-social-icon">yt</a>
-          <a href="https://medium.com/" aria-label="Medium" class="footer-social-icon" target="_blank" rel="noopener">m</a>
-        </div>
-      </div>
+      <p class="footer-contact">
+        蔡心怡 / Singing Tsai 客服信箱：<a href="mailto:luckystern16@gmail.com">luckystern16@gmail.com</a>
+        <span class="footer-sep">｜</span> TEL：02-24516767
+      </p>
     </div>
-  </footer>
+
+    <!-- 中間：版權＋隱私權條款 -->
+    <div class="footer-center">
+      <p class="footer-copy">
+        所有內容版權所有 ©Copyright Singingtsai. All Rights Reserved.
+        <a href="#" class="footer-link">隱私權政策與使用條款</a>
+      </p>
+    </div>
+
+    <!-- 右邊：社群 icon（FB / IG / LINE / YT / Medium） -->
+    <div class="footer-right">
+      <a href="https://www.facebook.com/" class="footer-social" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+      <a href="https://www.instagram.com/" class="footer-social" aria-label="Instagram" target="_blank" rel="noopener">ig</a>
+      <a href="https://lihi.cc/" class="footer-social" aria-label="LINE" target="_blank" rel="noopener">line</a>
+      <a href="https://www.youtube.com/@singingtsai" class="footer-social" aria-label="YouTube" target="_blank" rel="noopener">yt</a>
+      <a href="https://medium.com/" class="footer-social" aria-label="Medium" target="_blank" rel="noopener">m</a>
+    </div>
+
+  </div>
+</footer>
+
 
 
   <!-- JS：年份 & Hero 微視差 -->
