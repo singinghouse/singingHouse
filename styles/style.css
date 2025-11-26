@@ -1,16 +1,18 @@
-/* -----------------------------
-   基本色系與尺寸
------------------------------- */
+/* ---------------------------------
+   Global variables
+----------------------------------*/
 :root {
-  --ink: #2D2D2D;
-  --bg-main: #CFB9B7;
-  --bg-soft: #E6D1CF;
-  --panel: #F4E8E7;
+  --ink: #2d2d2d;
+  --bg-main: #cfb9b7;
+  --bg-soft: #e6d1cf;
+  --panel: #f4e8e7;
 
   --content-max: 1080px;
 }
 
-/* Reset */
+/* ---------------------------------
+   Reset & base
+----------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -21,36 +23,38 @@ body {
   background: var(--bg-main);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
-  font-size: 18px;
+  font-size: 24px;      /* 放大版內文字級 */
   line-height: 1.9;
 }
 
-/* 共用容器 */
+main {
+  padding-top: 72px;    /* 頂端保留給 header */
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------------------------
+   Layout helpers
+----------------------------------*/
 .container {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
 }
 
 .section {
-  padding: 120px 0;
+  padding: 140px 0;
 }
 
-/* 標題與文字 */
-.section-label {
-  font-size: 15px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #8E6F66;
-  margin-bottom: 14px;
-}
+/* ---------------------------------
+   Typography scale
+----------------------------------*/
 
-.section-title {
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
+/* 內文：1.5 倍 */
 .section-text,
 .past-body,
 .benefit-body,
@@ -58,51 +62,126 @@ body {
 .booking-text,
 .booking-note,
 .cta-sub {
-  font-size: 18px;
-  color: #5A4A46;
+  font-size: 24px;
+  color: #5a4a46;
   margin-bottom: 10px;
 }
 
-/* 按鈕 */
-.btn {
+/* 標題：2 倍放大 */
+.section-label {
+  font-size: 28px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8e6f66;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 26px;
+}
+
+.past-title {
+  font-size: 70px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.past-subquote {
+  font-size: 44px;
+  margin-bottom: 18px;
+}
+
+.benefit-title {
+  font-size: 52px;
+  margin-bottom: 16px;
+}
+
+.benefit-number {
+  font-size: 36px;
+  letter-spacing: 0.3em;
+  opacity: 0.7;
+}
+
+.who-caption {
+  font-size: 48px;
+  margin-top: 12px;
+}
+
+.cta-title {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.booking-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* ---------------------------------
+   Buttons
+----------------------------------*/
+.btn,
+.benefit-cta,
+.past-cta,
+.cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 22px;
+  padding: 14px 32px;
   border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.2);
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 30px;      /* 原本按鈕字也放大 */
+  border: 1px solid rgba(0,0,0,0.3);
   text-decoration: none;
+  cursor: pointer;
 }
 
-.btn-primary {
-  background: #2D2D2D;
-  color: #FFF;
-  border-color: #2D2D2D;
+.btn-primary,
+.cta-button {
+  background: #2d2d2d;
+  color: #fff;
+  border-color: #2d2d2d;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.22);
 }
 
-.btn-outline {
+.btn-outline,
+.past-cta,
+.benefit-cta {
   background: transparent;
-  color: #2D2D2D;
+  color: #2d2d2d;
 }
 
-/* -----------------------------
-   Header / Nav
------------------------------- */
+/* 小圓 icon */
+.past-cta-icon,
+.benefit-cta-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid #2d2d2d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+/* ---------------------------------
+   Header / nav
+----------------------------------*/
 .site-header {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
+  inset: 0 0 auto 0;
+  height: 72px;
   background: rgba(207,185,183,0.96);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  z-index: 20;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 .nav {
-  height: 64px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -125,22 +204,22 @@ body {
   width: 22px;
   height: 22px;
   border-radius: 999px;
-  background: #2D2D2D; /* 你之後可以換成真的 logo 圖 */
+  background: #2d2d2d;  /* 之後換成真正 logo 圖 */
 }
 
 .nav-logo-text {
+  font-size: 34px;
   font-weight: 700;
-  font-size: 18px;
 }
 
 .nav-menu {
   display: flex;
-  gap: 28px;
-  font-size: 16px;
-  font-weight: 600;
+  gap: 32px;
 }
 
 .nav-menu a {
+  font-size: 32px;
+  font-weight: 600;
   text-decoration: none;
   color: inherit;
   position: relative;
@@ -150,35 +229,30 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: -4px;
   width: 0;
-  height: 1px;
-  background: #2D2D2D;
-  opacity: 0.55;
+  height: 2px;
+  background: #2d2d2d;
+  opacity: 0.6;
   transition: width 0.18s ease;
 }
-
 .nav-menu a:hover::after {
   width: 100%;
 }
 
 .nav-icon {
-  font-size: 20px;
-  opacity: 0.5;
+  font-size: 24px;
+  opacity: 0.55;
 }
 
-main {
-  padding-top: 64px;
-}
-
-/* -----------------------------
+/* ---------------------------------
    Hero
------------------------------- */
+----------------------------------*/
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 520px;
-  color: #FFF;
+  min-height: 680px;
+  color: #fff;
   overflow: hidden;
 }
 
@@ -213,13 +287,13 @@ main {
 }
 
 .hero-center-text {
-  font-size: 40px;
+  font-size: 64px;
   letter-spacing: 0.25em;
 }
 
-/* -----------------------------
+/* ---------------------------------
    Section：過去 = 現在
------------------------------- */
+----------------------------------*/
 .section-past {
   background: var(--bg-main);
 }
@@ -227,106 +301,43 @@ main {
 .past-layout {
   display: grid;
   grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
-  gap: 48px;
+  gap: 64px;
   align-items: center;
-}
-
-.past-title {
-  font-size: 40px;
-  margin-bottom: 14px;
-}
-
-.past-subquote {
-  font-size: 24px;
-  margin-bottom: 18px;
-}
-
-.past-cta {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 18px;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.past-cta-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid #2D2D2D;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 6px;
-  font-size: 16px;
 }
 
 .past-visual-inner {
-  background: #E7D7D4;
-  border-radius: 22px;
-  padding: 36px 26px;
-  font-size: 16px;
-  color: #6C5850;
+  font-size: 22px;
+  color: #6c5850;
+  background: #e7d7d4;
+  border-radius: 24px;
+  padding: 52px 34px;
 }
 
-/* -----------------------------
+/* ---------------------------------
    Section：三段好處
------------------------------- */
+----------------------------------*/
 .section-benefits {
   padding: 0;
 }
 
 .benefit-row {
-  padding: 90px 0;
+  padding: 140px 0;
 }
 
-.benefit-row-1 { background: #E6D7D2; }
-.benefit-row-2 { background: #D9DDE2; }
-.benefit-row-3 { background: #DED6D3; }
+.benefit-row-1 { background: #e6d7d2; }
+.benefit-row-2 { background: #d9dde2; }
+.benefit-row-3 { background: #ded6d3; }
 
 .benefit-inner {
   display: grid;
   grid-template-columns: auto minmax(0,1fr);
-  gap: 32px;
+  gap: 40px;
   align-items: flex-start;
 }
 
-.benefit-number {
-  font-size: 20px;
-  letter-spacing: 0.25em;
-  opacity: 0.7;
-}
-
-.benefit-title {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.benefit-body {
-  margin-bottom: 12px;
-}
-
-.benefit-cta {
-  display: inline-flex;
-  align-items: center;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.benefit-cta-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  border: 1px solid #2D2D2D;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 6px;
-}
-
-/* -----------------------------
+/* ---------------------------------
    Section：關於心映好事
------------------------------- */
+----------------------------------*/
 .section-about {
   background: var(--bg-main);
 }
@@ -334,7 +345,7 @@ main {
 .about-layout {
   display: grid;
   grid-template-columns: minmax(0,1.2fr) minmax(0,0.8fr);
-  gap: 56px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -345,24 +356,24 @@ main {
 
 .about-arch {
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;
   aspect-ratio: 3 / 5;
-  background: #3F6A57;
-  border-radius: 999px 999px 24px 24px;
-  padding: 18px;
+  background: #3f6a57;
+  border-radius: 999px 999px 28px 28px;
+  padding: 24px;
   display: flex;
   align-items: flex-end;
 }
 
 .about-arch-inner {
-  background: #F4E8E7;
-  border-radius: 18px;
-  padding: 20px;
+  background: #f4e8e7;
+  border-radius: 22px;
+  padding: 28px;
 }
 
-/* -----------------------------
+/* ---------------------------------
    Section：誰適合探索潛意識？
------------------------------- */
+----------------------------------*/
 .section-who {
   background: var(--bg-soft);
 }
@@ -370,8 +381,8 @@ main {
 .who-arches {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 32px;
-  margin-top: 30px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .who-item {
@@ -380,35 +391,30 @@ main {
 
 .who-arch {
   width: 100%;
-  max-width: 260px;
-  margin: 0 auto 10px;
+  max-width: 300px;
+  margin: 0 auto 14px;
   aspect-ratio: 3 / 5;
-  background: #CFB9B7;
-  border-radius: 999px 999px 22px 22px;
-  padding: 16px;
+  background: #cfb9b7;
+  border-radius: 999px 999px 26px 26px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .who-arch-inner {
-  background: #F4E8E7;
-  border-radius: 999px 999px 18px 18px;
-  padding: 22px;
+  background: #f4e8e7;
+  border-radius: 999px 999px 22px 22px;
+  padding: 26px;
 }
 
-.who-caption {
-  font-size: 20px;
-  color: #4E3F39;
-}
-
-/* -----------------------------
+/* ---------------------------------
    Section：讓我們談談
------------------------------- */
+----------------------------------*/
 .section-cta-talk {
   position: relative;
-  background: #D7C7C4;
-  padding: 80px 0;
+  background: #d7c7c4;
+  padding: 90px 0;
 }
 
 .cta-bg {
@@ -417,40 +423,16 @@ main {
   background: radial-gradient(circle, rgba(255,255,255,0.8) 0, transparent 60%);
   opacity: 0.6;
   mix-blend-mode: screen;
-  pointer-events: none;
 }
 
 .cta-talk-inner {
   position: relative;
+  max-width: 900px;
 }
 
-.cta-title {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.cta-sub {
-  margin-bottom: 20px;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 22px;
-  border-radius: 999px;
-  border: none;
-  background: #2D2D2D;
-  color: #FFF;
-  font-size: 16px;
-}
-
-.cta-button-icon {
-  margin-right: 6px;
-}
-
-/* -----------------------------
+/* ---------------------------------
    Section：預約
------------------------------- */
+----------------------------------*/
 .section-booking {
   background: var(--panel);
 }
@@ -458,63 +440,63 @@ main {
 .booking-layout {
   display: grid;
   grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
-  gap: 40px;
+  gap: 60px;
   align-items: center;
 }
 
-.booking-title {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
 .booking-time {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 12px 0 6px;
 }
 
-/* -----------------------------
-   Footer
------------------------------- */
+/* ---------------------------------
+   Footer（左 logo＋中版權＋右社群）
+----------------------------------*/
 .site-footer {
-  background: #CFB9B7;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  padding: 20px 0 18px;
-  font-size: 14px;
-  color: #4F403A;
+  background: #cfb9b7;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding: 24px 0 20px;
+  font-size: 22px;
+  color: #4f403a;
 }
 
 .footer-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px 24px;
-  flex-wrap: wrap;
+  gap: 16px 32px;
 }
 
-/* 左：logo + 聯絡資訊 */
+/* 左邊 */
 .footer-left {
-  flex: 1 1 260px;
-  min-width: 240px;
+  flex: 1 1 280px;
+  min-width: 260px;
 }
 
 .footer-logo-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .footer-logo-mark {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
-  background: #2D2D2D;
+  background: #2d2d2d;
 }
 
 .footer-logo-text {
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 700;
+}
+
+.footer-contact {
+  margin: 0;
+  line-height: 1.6;
 }
 
 .footer-contact a {
@@ -523,10 +505,10 @@ main {
   text-underline-offset: 2px;
 }
 
-/* 中：版權＋條款 */
+/* 中間 */
 .footer-center {
-  flex: 1 1 260px;
-  min-width: 240px;
+  flex: 1 1 280px;
+  min-width: 260px;
   text-align: center;
 }
 
@@ -535,47 +517,51 @@ main {
 }
 
 .footer-legal-link {
-  font-size: 13px;
+  font-size: 20px;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-/* 右：社群 icon */
+/* 右邊 */
 .footer-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 10px;
   flex: 0 0 auto;
 }
 
 .footer-social {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
   border-radius: 999px;
-  border: 1px solid #2D2D2D;
+  border: 1px solid #2d2d2d;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  text-transform: uppercase;
+  font-size: 18px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .footer-social:hover {
   background: rgba(0,0,0,0.06);
 }
 
-/* -----------------------------
+/* ---------------------------------
    RWD
------------------------------- */
+----------------------------------*/
 @media (max-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .section {
-    padding: 90px 0;
+    padding: 110px 0;
+  }
+
+  .container {
+    padding: 0 20px;
   }
 
   .past-layout,
@@ -590,7 +576,7 @@ main {
   }
 
   .nav-menu {
-    display: none; /* 先隱藏手機版選單，之後可做漢堡 */
+    display: none; /* 先隱藏手機選單 */
   }
 
   .footer-inner {
@@ -604,5 +590,17 @@ main {
 
   .footer-right {
     align-self: flex-start;
+  }
+
+  .hero-center-text {
+    font-size: 42px;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
+  .past-title {
+    font-size: 48px;
   }
 }
