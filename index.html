@@ -1,1 +1,685 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>心映好事｜陪你整理內心故事的空間</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ========== 全站基礎設定 ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans TC", sans-serif;
+      background: #f7f3ef;
+      color: #2f2723;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ========== 導覽列 ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(247,243,239,0.94), rgba(247,243,239,0.7), transparent);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .nav {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .nav-brand-sub {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+    }
+    .nav-menu a {
+      padding: 4px 0;
+      position: relative;
+    }
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: #b6947c;
+      transition: width 0.2s;
+    }
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    /* 手機版隱藏導覽右側，保留簡單結構（之後可改成漢堡選單） */
+    @media (max-width: 767px) {
+      .nav-menu {
+        display: none;
+      }
+    }
+
+    main {
+      margin-top: 60px; /* 讓內容不被 fixed header 蓋住 */
+    }
+
+    /* ========== section 共用樣式 ========== */
+    section {
+      padding: 72px 0;
+    }
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #b09b92;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #3a312c;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: #6c5f57;
+      max-width: 540px;
+    }
+
+    /* ========== 1. Hero 影片區 ========== */
+    .hero-wrap {
+      height: 160vh; /* 讓 hero 有比較長的停留區，之後視差會用到 */
+    }
+    .hero-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+    }
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9) contrast(1.02) saturate(0.9);
+      z-index: -2;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(247,236,225,0.65) 0, transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(152,167,181,0.5) 0, transparent 55%);
+      mix-blend-mode: soft-light;
+      z-index: -1;
+    }
+    .hero-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      max-width: 640px;
+    }
+    .hero-kicker {
+      letter-spacing: 0.24em;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: rgba(255,255,255,0.9);
+    }
+    .hero-title {
+      font-size: clamp(26px, 6vw, 40px);
+      margin-bottom: 10px;
+      text-shadow: 0 14px 40px rgba(0,0,0,0.45);
+    }
+    .hero-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.96);
+      max-width: 460px;
+      margin-bottom: 22px;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(247,240,234,0.14);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      color: #fdfaf7;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary {
+      background: rgba(197,162,138,0.96);
+      border-color: transparent;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.32);
+    }
+    .btn-secondary {
+      background: rgba(247,240,234,0.2);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.18);
+    }
+
+    @media (max-width: 767px) {
+      .hero-inner {
+        padding: 64px 20px 72px;
+      }
+      .hero-sub {
+        font-size: 13px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner {
+        padding: 96px 20px 104px;
+      }
+    }
+
+    /* ========== 2. 開場提問區 ========== */
+    .intro-section {
+      background: #f7f3ef;
+    }
+    .intro-inner {
+      max-width: 720px;
+    }
+    .intro-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #3a312c;
+    }
+    .intro-sub {
+      font-size: 14px;
+      color: #6c5f57;
+    }
+
+    /* ========== 3. 催眠能幫助你什麼 ========== */
+    .benefits-section {
+      background: #f3ece6;
+    }
+    .benefits-header {
+      margin-bottom: 24px;
+    }
+    .benefits-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.04);
+    }
+    .benefit-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #b29582;
+      margin-bottom: 6px;
+    }
+    .benefit-title {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: #3b302b;
+    }
+    .benefit-text {
+      font-size: 13px;
+      color: #73655e;
+    }
+
+    @media (min-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    /* ========== 4. 認識心映好事 ========== */
+    .about-section {
+      background: #f7f3ef;
+    }
+    .about-inner {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: 14px;
+      color: #6c5f57;
+      margin-bottom: 10px;
+    }
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+    .about-media-placeholder {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px dashed rgba(177,160,145,0.7);
+      padding: 32px 24px;
+      font-size: 13px;
+      color: #a28d7e;
+      text-align: center;
+      background: rgba(255,255,255,0.7);
+    }
+
+    @media (min-width: 768px) {
+      .about-inner {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      }
+    }
+
+    /* ========== 5. 誰適合探索潛意識 ========== */
+    .who-section {
+      background: #f3ece6;
+    }
+    .who-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .who-card {
+      border-radius: 18px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.03);
+      font-size: 13px;
+      color: #685a53;
+    }
+
+    @media (min-width: 768px) {
+      .who-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    /* ========== 6. 精選內容區（Podcast + Blog） ========== */
+    .content-section {
+      background: #f7f3ef;
+    }
+    .content-inner {
+      display: grid;
+      gap: 24px;
+      margin-top: 12px;
+    }
+    .content-block {
+      border-radius: 20px;
+      padding: 20px 18px 22px;
+      background: #f3ece6;
+    }
+    .content-title {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: #3b302b;
+    }
+    .content-text {
+      font-size: 13px;
+      color: #6c5f57;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .content-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* ========== 7. 預約 Banner ========== */
+    .booking-section {
+      background: #f0e1da;
+    }
+    .booking-inner {
+      display: grid;
+      gap: 18px;
+      align-items: center;
+    }
+    .booking-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #3a312c;
+    }
+    .booking-text {
+      font-size: 14px;
+      color: #6c5f57;
+      margin-bottom: 6px;
+    }
+    .booking-time {
+      font-size: 13px;
+      color: #5d4f47;
+      font-weight: 500;
+    }
+    .booking-note {
+      font-size: 12px;
+      color: #7c6b61;
+      margin-top: 6px;
+    }
+
+    @media (min-width: 768px) {
+      .booking-inner {
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      }
+      .booking-actions {
+        text-align: right;
+      }
+      .booking-actions .btn-primary {
+        min-width: 220px;
+      }
+    }
+
+    /* ========== 8. Footer ========== */
+    footer {
+      background: #f1e8e0;
+      padding: 32px 0 24px;
+      font-size: 12px;
+      color: #7b6a60;
+    }
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .footer-brand {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <span>心映好事</span>
+        <span class="nav-brand-sub">SINGING TSAI</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#about">關於心怡</a>
+        <a href="#content">宇宙放映室</a>
+        <a href="#content">心映日誌</a>
+        <a href="#booking">催眠療程 · 預約</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero 影片區（之後這裡會加視差） -->
+    <section class="hero-wrap">
+      <div class="hero-sticky">
+        <div class="hero">
+          <!-- 替換成你的影片路徑：assets/video/hero-home.mp4 -->
+          <video class="hero-video"
+                 autoplay
+                 muted
+                 loop
+                 playsinline>
+            <source src="assets/video/hero-home.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-overlay"></div>
+
+          <div class="container hero-inner">
+            <div class="hero-content">
+              <div class="hero-kicker">心映好事 · 潛意識療癒空間</div>
+              <h1 class="hero-title">那些撐過去的事，還在影響你。</h1>
+              <p class="hero-sub">
+                在這裡，我們一起慢慢看見、整理，<br/>
+                把注意力放回你自己身上。
+              </p>
+              <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">了解一對一個案</a>
+                <a href="#benefits" class="btn btn-secondary">先看看可以怎麼陪你</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 開場提問區 -->
+    <section class="intro-section">
+      <div class="container intro-inner">
+        <h2 class="intro-title">你也覺得，自己好像卡在同一個地方嗎？</h2>
+        <p class="intro-sub">
+          明明很努力，卻常回到同樣的情緒與關係裡。
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. 催眠能幫助你什麼 -->
+    <section class="benefits-section" id="benefits">
+      <div class="container">
+        <div class="benefits-header">
+          <div class="section-label">Hypnotherapy</div>
+          <h2 class="section-title">催眠，可以幫你做到的事</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-label">01</div>
+            <div class="benefit-title">看見真正的卡點</div>
+            <p class="benefit-text">找到一直重複發生的源頭。</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-label">02</div>
+            <div class="benefit-title">溫柔整理過去</div>
+            <p class="benefit-text">不是逼自己放下，而是慢慢鬆開。</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-label">03</div>
+            <div class="benefit-title">活得更像自己</div>
+            <p class="benefit-text">從「配合別人」回到「替自己選擇」。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 認識心映好事 / 關於心怡 -->
+    <section class="about-section" id="about">
+      <div class="container about-inner">
+        <div class="about-text">
+          <div class="section-label">About</div>
+          <h2 class="section-title">這裡，是給你暫時放下堅強的地方。</h2>
+          <p>
+            我是 Hsinyi，NGH 認證催眠師，也是插畫創作者。
+          </p>
+          <p>
+            我想陪你，一起把那些沒被說完的故事，好好放下。
+          </p>
+          <a href="/about" class="btn btn-secondary" style="margin-top: 12px; padding-inline: 18px;">
+            看完整故事
+          </a>
+        </div>
+        <div class="about-media-placeholder">
+          之後可放：你的照片、插畫、或一張靜態設計圖。<br/>
+          （暫時先當占位圖使用）
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 誰適合探索潛意識？ -->
+    <section class="who-section">
+      <div class="container">
+        <div class="section-label">For You</div>
+        <h2 class="section-title">如果你是這樣的人，這裡會很適合你</h2>
+        <div class="who-grid">
+          <div class="who-card">
+            常覺得卡住，卻說不出卡在哪裡。
+          </div>
+          <div class="who-card">
+            過去的事，一想到還是很痛。
+          </div>
+          <div class="who-card">
+            想活得更像自己，不再只是配合。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 精選內容區：Podcast + Blog -->
+    <section class="content-section" id="content">
+      <div class="container">
+        <div class="section-label">Stay Close</div>
+        <h2 class="section-title">先從聽聽／看看開始</h2>
+        <div class="content-inner">
+          <div class="content-block">
+            <div class="content-title">心映宇宙放映室</div>
+            <p class="content-text">
+              用聊天的方式，陪你聽聽別人的故事。
+            </p>
+            <a href="/podcast" class="btn btn-secondary">
+              前往 Podcast
+            </a>
+          </div>
+          <div class="content-block">
+            <div class="content-title">心映日誌</div>
+            <p class="content-text">
+              把情緒拆成一小段一小段慢慢讀。
+            </p>
+            <a href="/blog" class="btn btn-secondary">
+              看更多文章
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 預約 Banner -->
+    <section class="booking-section" id="booking">
+      <div class="container booking-inner">
+        <div>
+          <h2 class="booking-title">想聊聊你的故事嗎？</h2>
+          <p class="booking-text">
+            目前每週開放少量一對一個案，你可以先從一則訊息開始。
+          </p>
+          <p class="booking-time">
+            本月時段：每週二、四晚間 19:30、21:30
+          </p>
+        </div>
+        <div class="booking-actions">
+          <!-- TODO: 換成你的官方 LINE 連結 -->
+          <a href="https://line.me/R/ti/p/@yourlineid" target="_blank" rel="noopener" class="btn btn-primary">
+            透過 LINE 詢問預約
+          </a>
+          <p class="booking-note">
+            加官方 LINE，留言「想預約個案」，我會親自回覆你。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">心映好事</div>
+          <div>When your heart shifts, life reflects.</div>
+        </div>
+        <div class="footer-links">
+          <span>Contact：hello@singingtsai.com</span>
+          <span>Instagram</span>
+          <span>Podcast</span>
+          <span>Facebook</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> 心映好事 · Singing Tsai. All rights reserved.</div>
+        <div>本站內容僅為情緒陪伴與自我探索，不替代專業醫療或心理治療。</div>
+      </div>
+    </div>
+
+    <script>
+      // 簡單填入當前年份
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+</body>
+</html>
 
