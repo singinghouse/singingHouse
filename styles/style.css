@@ -599,3 +599,93 @@ h3 {
     max-width: 320px;
   }
 }
+
+
+/* ===========================
+   Section 2：01 直擊潛意識底層
+   =========================== */
+
+.section-step {
+  background-color: #CFB9B7;
+  padding: 80px 0;
+}
+
+.step-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* 文字區 */
+.step-text {
+  flex: 1;
+  color: #2D2D2D;
+}
+
+.step-number {
+  font-size: 26px;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+.step-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.step-body {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.step-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D2D2D;
+  text-decoration: none;
+  border-bottom: 2px solid #2D2D2D;
+  padding-bottom: 3px;
+}
+
+.step-link .icon {
+  margin-right: 6px;
+}
+
+/* 圖片區 */
+.step-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.step-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* 手機版 */
+@media (max-width: 768px) {
+  .step-wrapper {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .step-title {
+    font-size: 24px;
+  }
+
+  .step-body {
+    font-size: 16px;
+  }
+
+  .step-image img {
+    max-width: 100%;
+  }
+}
