@@ -689,3 +689,70 @@ h3 {
     max-width: 100%;
   }
 }
+
+/* ===========================
+   圓形箭頭＋文字 CTA 按鈕
+   =========================== */
+
+.circle-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #2D2D2D;
+}
+
+/* 左邊圓形 */
+.circle-cta__icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #2D2D2D;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 箭頭 */
+.circle-cta__arrow {
+  font-size: 44px;
+  line-height: 1;
+  color: #F7F2F1;
+  transform: translate(2px, -2px); /* 讓箭頭略往右上偏一點，比較有動感 */
+}
+
+/* 右邊文字 */
+.circle-cta__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.circle-cta__text span {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+/* hover 效果（桌機） */
+.circle-cta:hover .circle-cta__icon {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  transition: all 0.2s ease;
+}
+
+/* 手機版縮小一點 */
+@media (max-width: 768px) {
+  .circle-cta__icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .circle-cta__arrow {
+    font-size: 32px;
+  }
+
+  .circle-cta__text span {
+    font-size: 18px;
+  }
+}
+
