@@ -511,3 +511,91 @@ h3 {
     font-size: 16px;
   }
 }
+
+
+/* ===========================
+   Section：你的過去＝現在的你？
+   =========================== */
+
+.section-past {
+  background-color: #CFB9B7;
+  padding: 100px 0;
+}
+
+.section-past-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.past-text {
+  flex: 1;
+  color: #2D2D2D;
+}
+
+.past-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.past-sub {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.past-body {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.past-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2D2D2D;
+  text-decoration: none;
+  border-bottom: 2px solid #2D2D2D;
+  padding-bottom: 3px;
+}
+
+.past-link .icon {
+  margin-right: 6px;
+}
+
+/* 圖片 */
+.past-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.past-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 8px;
+}
+
+/* 手機版 */
+@media (max-width: 768px) {
+  .section-past-wrapper {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .past-title {
+    font-size: 34px;
+  }
+
+  .past-body,
+  .past-sub {
+    font-size: 16px;
+  }
+
+  .past-image img {
+    max-width: 320px;
+  }
+}
