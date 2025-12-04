@@ -756,3 +756,240 @@ h3 {
   }
 }
 
+
+
+/* =====================================
+   關於心怡：整體設定
+   ===================================== */
+
+.page-about {
+  background-color: #CFB9B7;
+  color: #2D2D2D;
+}
+
+/* 讓每一區跟首頁一樣有上下留白 */
+.page-about section {
+  padding: 80px 0;
+}
+
+/* 共用區塊標題與文字 */
+.about-section-title {
+  font-size: 32px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.about-section-body {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* 小標章 */
+.about-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #2D2D2D;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* =====================================
+   Hero：從迷失到蛻變
+   ===================================== */
+
+.about-hero {
+  background-color: #CFB9B7;
+  background-image: url("../assets/images/sections/past-people.png"); /* 先借用一張圖當底 */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #2D2D2D;
+}
+
+.about-hero::before {
+  /* 稍微壓一點霧，文字會更清楚 */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(207, 185, 183, 0.8);
+}
+
+.about-hero-inner {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+.about-hero-text {
+  max-width: 520px;
+}
+
+.about-hero-eyebrow {
+  font-size: 16px;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.about-hero-title {
+  font-size: 40px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.about-hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.about-hero-body {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   我的故事區
+   ===================================== */
+
+.about-story {
+  background-color: #CFB9B7;
+}
+
+.about-story-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.about-story-text {
+  flex: 1.2;
+}
+
+.about-story-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* 插畫佔位：之後你可以換成 img */
+.about-story-illust-placeholder {
+  width: 100%;
+  max-width: 380px;
+  height: 260px;
+  border-radius: 32px;
+  background-color: #8F7C84;
+  color: #F7F2F1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* 下方拱形照片 */
+.about-story-photo-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.about-story-photo {
+  width: 260px;
+  border-radius: 260px 260px 0 0; /* 上方拱形 */
+  object-fit: cover;
+}
+
+/* =====================================
+   我的願景區
+   ===================================== */
+
+.about-vision {
+  background-color: #CFB9B7;
+}
+
+.about-vision-inner {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-vision-text {
+  flex: 1.2;
+}
+
+.about-vision-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-vision-arch {
+  width: 260px;
+  height: 340px;
+  border-radius: 260px 260px 0 0;
+  background-color: #2F6C56; /* 綠色拱門 */
+}
+
+/* =====================================
+   CTA：開出一朵花
+   ===================================== */
+
+.about-cta {
+  background-color: #CFB9B7;
+  border-top: 1px solid rgba(45, 45, 45, 0.08);
+}
+
+.about-cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.about-cta-title {
+  font-size: 28px;
+  line-height: 1.6;
+}
+
+/* =====================================
+   RWD：手機版
+   ===================================== */
+
+@media (max-width: 768px) {
+  .page-about section {
+    padding: 56px 0;
+  }
+
+  .about-hero-inner {
+    min-height: 420px;
+  }
+
+  .about-hero-title {
+    font-size: 30px;
+  }
+
+  .about-section-title {
+    font-size: 24px;
+  }
+
+  .about-section-body {
+    font-size: 16px;
+  }
+
+  .about-story-inner,
+  .about-vision-inner {
+    flex-direction: column;
+  }
+
+  .about-story-photo-wrap {
+    justify-content: center;
+  }
+
+  .about-vision-arch {
+    width: 220px;
+    height: 300px;
+  }
+}
+
