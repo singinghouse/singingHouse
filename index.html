@@ -1,184 +1,326 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <title>心映好事｜NGH認證催眠師／插畫家 Hsinyi 💫 催眠療癒 💫 內在力量 💫 自我成長 💫 潛意識探索｜陪伴妳一起穿越、一起發現新的自己</title>
+<head>
+  <meta charset="UTF-8" />
+  <title>心映好事｜NGH認證催眠師／插畫家 Hsinyi 💫 催眠療癒 💫 內在力量 💫 自我成長 💫 潛意識探索｜陪伴妳一起穿越、一起發現新的自己</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="NGH認證催眠師／插畫家 Hsinyi 💫 催眠療癒 💫 內在力量 💫 自我成長 💫 潛意識探索｜陪伴妳一起穿越、一起發現新的自己" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="NGH認證催眠師／插畫家 Hsinyi 💫 催眠療癒 💫 內在力量 💫 自我成長 💫 潛意識探索｜陪伴妳一起穿越、一起發現新的自己"
-    />
+  <!-- ============  頂部導覽  ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- 左：小 logo 圓點（之後要換成 SVG 可以）-->
+      <a href="index.html" class="brand-mark" aria-label="心映好事首頁">
+        <span class="brand-dot"></span>
+      </a>
 
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
+      <!-- 中：心映好事 文字標誌（目前用文字，你要換 SVG 直接改成 <img>） -->
+      <a href="index.html" class="brand-name">
+        心映好事
+      </a>
 
-  <body id="top">
-    <!-- ================== HEADER ================== -->
-    <header class="site-header">
-      <div class="nav-wrapper">
-        <!-- 左邊：logo 小圖示 -->
-        <a href="#top" class="nav-logo-left">
-          <!-- 檔名先這樣放，之後你再把 svg 丟進 assets/images/logo/ -->
-          <img src="assets/images/logo/logo-mark.svg" alt="心映好事 Logo" />
-        </a>
+      <!-- 右：選單 -->
+      <nav class="main-nav" aria-label="主選單">
+        <a href="about.html">關於心怡</a>
+        <a href="studio.html">宇宙放映室</a>
+        <a href="journal.html">心映日誌</a>
+        <a href="booking.html" class="nav-cta">預約陪伴</a>
+      </nav>
+    </div>
+  </header>
 
-        <!-- 中間：心映好事 字標 SVG -->
-        <a href="#top" class="nav-brand-center">
-          <img src="assets/images/logo/logo-title.svg" alt="心映好事" />
-        </a>
+  <!-- ============  Hero：影片區  ============ -->
+  <section class="hero" id="top">
+    <div class="hero-media">
+      <video
+        class="hero-video"
+        src="assets/video/hero-home.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://singingtsai.com/wp-content/uploads/2025/12/herobg-scaled.webp">
+        <!-- 備援圖片（舊版瀏覽器不支援 video 時） -->
+        <img
+          src="https://singingtsai.com/wp-content/uploads/2025/12/herobg-scaled.webp"
+          alt="海面波光粼粼的畫面" />
+      </video>
+    </div>
+    <div class="hero-overlay">
+      <h1>心映好事</h1>
+    </div>
+  </section>
 
-        <!-- 右邊：四個選單 -->
-        <nav class="nav-right">
-          <a href="#about">關於心怡</a>
-          <a href="#studio">宇宙放映室</a>
-          <a href="#blog">心映日誌</a>
-          <a href="#booking">預約陪伴</a>
-        </nav>
-      </div>
-    </header>
+  <main>
 
-    <!-- ================== MAIN ================== -->
-    <main>
-      <!-- HERO：影片＋中央文字 -->
-      <section class="hero">
-        <video
-          class="hero-video"
-          src="assets/video/hero-home.mp4"
-          autoplay
-          muted
-          loop
-          playsinline
-        ></video>
+    <!-- ============ 區塊 01：你的過去＝現在的你？ ============ -->
+    <section class="section section-past" id="past">
+      <div class="container section-flex">
+        <div class="section-past-text">
+          <div class="section-label">01</div>
 
-        <div class="hero-text">心映好事</div>
-      </section>
-      <!-- ================== Section：你的過去 = 現在的你？ ================== -->
-      <section class="section-past">
-        <div class="container section-past-wrapper">
-      
-          <!-- 左邊文字 -->
-          <div class="past-text">
-            <h2 class="past-title">「你的過去＝現在的你？」</h2>
-      
-            <p class="past-sub">
-              你的過去，是否悄悄影響現在的你？
-            </p>
-      
-            <p class="past-body">
-              有些記憶藏得很深，卻影響著現在的心境。<br />
-              你可能只是把那些感受暫存起來，就像放到抽屜裡一樣。<br />
-              但當生活再度觸發，你會發現「情緒卡住了」，而這是一種被忽略的感受。<br /><br />
-              催眠不是魔法，它是一個安全溫柔的過程，像是在閱讀自己的日記。
-            </p>
-      
-            <a href="#booking" class="past-link">
-              <span class="icon">➜</span> 預約了解更多
-            </a>
-            <a href="#blog" class="circle-cta">
-              <span class="circle-cta__icon">
-                <span class="circle-cta__arrow">↗</span>
-              </span>
-            
-              <span class="circle-cta__text">
-                <span>閱讀更多</span>
-                <span>心映好事室的文章</span>
-              </span>
-            </a>
-          </div>
-      
-          <!-- 右邊圖片 -->
-          <div class="past-image">
-            <img src="assets/images/sections/past-people.png" alt="你的過去插畫" />
-          </div>
-      
+          <h2 class="section-title">
+            <span class="title-line-bottom">
+              <img src="https://singingtsai.com/wp-content/uploads/2025/03/index_con1_title_line1.svg" alt="" />
+            </span>
+            「你的過去 ＝ 現在的你？」
+          </h2>
+
+          <p class="section-subtitle">「你的過去，是否悄悄影響現在的你？」</p>
+
+          <!-- 這裡是正文，你可以把 WordPress 上的文字整段貼進來 -->
+          <p class="section-body">
+            這裡先放一段說明文字，之後你可以依照自己的故事替換成正式版本。
+          </p>
+
+          <!-- CTA：閱讀更多（箭頭＋文字的按鈕） -->
+          <a href="journal.html" class="round-arrow-link">
+            <span class="round-arrow-icon">
+              <span class="arrow-diagonal"></span>
+            </span>
+            <span class="round-arrow-text">
+              閱讀更多<br />心映好室的文章
+            </span>
+          </a>
         </div>
-      </section>
 
-      <!-- ================== Section 2：01 直擊潛意識底層 ================== -->
-      <section class="section-step section-step01">
-        <div class="container step-wrapper">
-          <!-- 左邊文字 -->
-          <div class="step-text">
-            <div class="step-number">01</div>
+        <div class="section-past-visual">
+          <div class="past-illustration">
+            <img
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con1_img-1.svg"
+              alt="兩個人的側臉線條插畫" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 區塊 A：催眠能幫助你什麼？大標 + 連到 Step 01 的箭頭 ============ -->
+    <section class="section section-help">
+      <div class="container">
+        <div class="section-help-header">
+          <div class="help-title-wrap">
+            <img
+              class="help-title-line"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titlearea_line.svg"
+              alt="" />
+            <h2 class="help-title">催眠能幫助你什麼？</h2>
+          </div>
+
+          <img
+            class="help-arrow"
+            src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titlearea_arrow.svg"
+            alt="往下的引導箭頭" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 區塊 02：直擊潛意識底層 ============ -->
+    <section class="section section-step section-step01" id="step01">
+      <div class="section-bg section-bg-01"></div>
+      <div class="container section-step-inner">
+        <div class="step-text">
+          <div class="section-label">01</div>
+
+          <div class="step-title-wrap">
+            <img
+              class="step-title-line-top"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titleSEC_line.svg"
+              alt="" />
             <h3 class="step-title">直擊潛意識底層的問題根源</h3>
-            <p class="step-body">
-              有時候，你明明知道自己「早就該放下了」，但那些畫面和感受卻還是一直浮上來。<br />
-              在催眠的過程裡，我們會一起回到那個起點，溫柔地看見當時發生了什麼，
-              以及那個時候的你，是怎麼保護自己的。
-            </p>
-            <a href="#booking" class="step-link">
-              <span class="icon">➜</span> 預約了解更多
-            </a>
+            <img
+              class="step-title-line-bottom"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con3_titleSEC_line.svg"
+              alt="" />
           </div>
-      
-          <!-- 右邊圖片 -->
-          <div class="step-image">
-            <img src="assets/images/sections/step01-mountain.png" alt="潛意識山景" />
-          </div>
-        </div>
-      </section>
 
-      <section id="studio" class="section section--tight">
-        <div class="container">
-          <h2 class="section-heading">宇宙放映室（預留區塊）</h2>
           <p class="section-body">
-            等首頁第一屏完成，我們再一起把這裡改成你原本的宇宙放映室內容。
+            這裡放 Step 01 的說明文字，你可以從原本網站複製貼上。
           </p>
-        </div>
-      </section>
 
-      <section id="blog" class="section section--tight">
-        <div class="container">
-          <h2 class="section-heading">心映日誌（預留區塊）</h2>
-          <p class="section-body">
-            這裡之後會放文章卡片或連結；目前先讓版面有點東西，方便你對比字級。
-          </p>
-        </div>
-      </section>
-
-      <section id="booking" class="section section--tight">
-        <div class="container">
-          <h2 class="section-heading">預約陪伴（預留區塊）</h2>
-          <p class="section-body">
-            未來這裡會放「Line
-            預約」按鈕與每週開放時段說明，等你想好了文案，再一起調整。
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <!-- ================== FOOTER ================== -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <!-- 左邊：品牌名稱＋聯絡方式 -->
-        <div class="footer-left">
-          <div class="footer-logo-text">心映好事</div>
-          <div class="footer-contact">
-            蔡心怡 / Singing Tsai 客服信箱：
-            <a href="mailto:luckystern16@gmail.com">luckystern16@gmail.com</a>
-            <br />
-            TEL：02-24516767
-          </div>
-        </div>
-
-        <!-- 右邊：社群＋版權＋隱私權 -->
-        <div class="footer-right">
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook">F</a>
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="LINE">LINE</a>
-            <a href="#" aria-label="YouTube">YT</a>
-            <a href="https://medium.com" aria-label="Medium">M</a>
-          </div>
-
-          <div class="footer-copy">
-            所有內容版權所有 ©Copyright Singingtsai. All Rights Reserved.
-          </div>
-
-          <a href="#" class="footer-legal-link">隱私權政策與使用條款</a>
+          <img
+            class="step-arrow"
+            src="https://singingtsai.com/wp-content/uploads/2025/03/index_con3_titlearea_arrow.svg"
+            alt="往下一步的箭頭" />
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <!-- ============ 區塊 03：喚醒內在力量，療癒過去的創傷 ============ -->
+    <section class="section section-step section-step02" id="step02">
+      <div class="section-bg section-bg-02"></div>
+      <div class="container section-step-inner">
+        <div class="step-text">
+          <div class="section-label">02</div>
+
+          <div class="step-title-wrap">
+            <h3 class="step-title">喚醒內在力量，療癒過去的創傷</h3>
+            <img
+              class="step-title-line-bottom"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con3_titleSEC_line.svg"
+              alt="" />
+          </div>
+
+          <p class="section-body">
+            這裡放 Step 02 的說明文字。
+          </p>
+
+          <img
+            class="step-arrow"
+            src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titlearea_arrow.svg"
+            alt="往下一步的箭頭" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 區塊 04：重建平衡，創造新的可能性 ============ -->
+    <section class="section section-step section-step03" id="step03">
+      <div class="section-bg section-bg-03"></div>
+      <div class="container section-step-inner">
+        <div class="step-text">
+          <div class="section-label">03</div>
+
+          <div class="step-title-wrap">
+            <img
+              class="step-title-line-top"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titleSEC_line1.svg"
+              alt="" />
+            <h3 class="step-title">重建內心的平衡，創造全新的可能性</h3>
+            <img
+              class="step-title-line-bottom"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titleSEC_line2.svg"
+              alt="" />
+          </div>
+
+          <p class="section-body">
+            這裡放 Step 03 的說明文字。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 區塊 05：認識心映好事（綠色拱門） ============ -->
+    <section class="section section-about-brand" id="about-brand">
+      <div class="container about-brand-inner">
+        <div class="about-left">
+          <img
+            class="about-logo"
+            src="https://singingtsai.com/wp-content/uploads/2025/03/logo_166-1.svg"
+            alt="心映好事 Logo" />
+          <h2 class="about-title">認識心映好事</h2>
+          <p class="section-body">
+            這裡可以放品牌故事與核心概念，之後你再從原網站複製過來。
+          </p>
+        </div>
+
+        <div class="about-arch-wrap">
+          <div class="about-arch">
+            <img
+              class="about-arch-bg"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con6_door_img01.webp"
+              alt="綠色拱門畫面" />
+            <img
+              class="about-arch-ngh"
+              src="https://singingtsai.com/wp-content/uploads/2025/03/logo_NGH_w200.svg"
+              alt="NGH 認證標章" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 區塊 06：誰適合探索？三個拱門卡 ============ -->
+    <section class="section section-doors" id="who">
+      <div class="container">
+        <div class="doors-header">
+          <span class="doors-tag">浮現的你</span>
+          <h2 class="section-title">誰適合探索潛意識？</h2>
+        </div>
+
+        <div class="doors-grid">
+          <!-- 卡 1：鑰匙 -->
+          <article class="door-card">
+            <div class="door-arch">
+              <img
+                src="https://singingtsai.com/wp-content/uploads/2025/03/index_con6_door_img01.webp"
+                alt="鑰匙插畫" />
+            </div>
+            <h3 class="door-title">感覺自己</h3>
+            <p class="door-text">正在尋找改變契機的人。</p>
+          </article>
+
+          <!-- 卡 2：星星 -->
+          <article class="door-card">
+            <div class="door-arch">
+              <img
+                src="https://singingtsai.com/wp-content/uploads/2025/03/logo_166-1.svg"
+                alt="星星象徵的插畫" />
+            </div>
+            <h3 class="door-title">對內在好奇</h3>
+            <p class="door-text">喜歡覺察、書寫與自我探索的人。</p>
+          </article>
+
+          <!-- 卡 3：月亮 -->
+          <article class="door-card">
+            <div class="door-arch">
+              <img
+                src="https://singingtsai.com/wp-content/uploads/2025/03/index_con6_door_img03.webp"
+                alt="月亮插畫" />
+            </div>
+            <h3 class="door-title">正在轉換階段</h3>
+            <p class="door-text">面臨關係、工作或生命方向轉折的人。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 區塊 07：讓我們談談（光芒背景 CTA） ============ -->
+    <section class="section section-cta" id="booking">
+      <div class="cta-bg"></div>
+      <div class="container cta-inner">
+        <div class="cta-text-block">
+          <h2 class="section-title">讓我們談談，還有什麼可能？</h2>
+          <p class="section-body">
+            如果你準備好給自己一份溫柔的陪伴，可以從一則訊息開始。
+          </p>
+          <a href="booking.html" class="primary-btn">
+            預約 LINE 對談 / 催眠陪伴
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">心映好事</div>
+        <div class="footer-contact">
+          蔡心怡 / Singing Tsai 客服信箱：
+          <a href="mailto:luckystern16@gmail.com">luckystern16@gmail.com</a>
+          <span class="footer-contact-sep">TEL：02-24516767</span>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" class="social-circle">F</a>
+          <a href="#" aria-label="Instagram" class="social-circle">IG</a>
+          <a href="#" aria-label="LINE" class="social-circle">LINE</a>
+          <a href="#" aria-label="YouTube" class="social-circle">YT</a>
+          <a href="https://medium.com" target="_blank" rel="noopener" aria-label="Medium" class="social-circle">M</a>
+        </div>
+
+        <div class="footer-copy">
+          所有內容版權所有 ©Copyright Singingtsai. All Rights Reserved.
+        </div>
+        <a href="#" class="footer-privacy">隱私權政策與使用條款</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>
