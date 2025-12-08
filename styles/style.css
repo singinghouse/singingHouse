@@ -1,20 +1,4 @@
-/* ================= 基本設定 ================= */
-
-:root {
-  --bg-main: #cfb9b7;
-  --bg-light: #e7d7d5;
-  --bg-step01: #e7d7d5;
-  --bg-step02: #d9e1e8;
-  --bg-step03: #e6dad6;
-  --text-main: #2d2d2d;
-  --text-sub: #4a3f3f;
-  --white: #ffffff;
-
-  --font-sans: -apple-system, BlinkMacSystemFont, "Noto Sans TC",
-    "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
-
-  --container-width: 1120px;
-}
+/* =============== 全站基礎 =============== */
 
 *,
 *::before,
@@ -29,570 +13,533 @@ body {
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--text-main);
-  background-color: var(--bg-main);
+  font-family: "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  background-color: #cfb9b7;
+  color: #2d2d2d;
   line-height: 1.7;
 }
 
-/* ================= 通用元件 ================= */
-
-.container {
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.section {
-  padding: 5rem 0;
-}
-
-.section + .section {
-  border-top: 1px solid rgba(0, 0, 0, 0.03);
-}
-
-.section-split {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-}
-
-.section-split > * {
-  flex: 1 1 280px;
-}
-
-.section-title {
-  font-size: 2.1rem;
-  letter-spacing: 0.12em;
-  margin: 0 0 1.2rem;
-}
-
-.section-sub {
-  font-size: 1.3rem;
-  margin: 0 0 0.75rem;
-}
-
-.section-body {
-  margin: 0 0 1.1rem;
-  font-size: 1rem;
-  color: var(--text-sub);
-}
-
-.eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin: 0 0 0.8rem;
-  color: var(--text-sub);
-}
-
-.center {
-  text-align: center;
-}
-
-/* ================= Header ================= */
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background-color: rgba(207, 185, 183, 0.96);
-  backdrop-filter: blur(10px);
-}
-
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--text-main);
-}
-
-.brand-mark {
-  width: 44px;
-  height: 44px;
+img {
+  max-width: 100%;
   display: block;
 }
 
-.brand-name {
-  font-weight: 700;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =============== 導覽列 =============== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: #cfb9b7;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.nav-inner {
+  max-width: 1120px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.nav-logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-brand {
   font-size: 1.25rem;
+  font-weight: 700;
   letter-spacing: 0.15em;
 }
 
-.main-nav {
+.nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 28px;
   font-size: 0.95rem;
 }
 
-.main-nav a {
-  text-decoration: none;
-  color: var(--text-main);
-  letter-spacing: 0.15em;
+.nav-menu a {
   position: relative;
 }
 
-.main-nav a::after {
+.nav-menu a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -0.3rem;
+  bottom: -4px;
   width: 0;
   height: 1px;
-  background-color: var(--text-main);
-  transition: width 0.25s ease;
+  background-color: #2d2d2d;
+  transition: width 0.2s ease;
 }
 
-.main-nav a:hover::after {
+.nav-menu a:hover::after {
   width: 100%;
 }
 
-.main-nav .nav-cta {
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--text-main);
-}
-
-/* ================= Hero ================= */
+/* =============== Hero =============== */
 
 .hero {
   position: relative;
-  height: calc(100vh - 100px);
+  margin-top: 100px; /* 騰出導覽列高度 */
+  height: 80vh;
   min-height: 520px;
+  max-height: 760px;
   overflow: hidden;
 }
 
 .hero-video {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .hero-overlay {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .hero-title {
-  color: var(--white);
-  font-size: 2.4rem;
+  color: #ffffff;
+  font-size: 2.2rem;
   letter-spacing: 0.5em;
-  text-align: center;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  padding-left: 0.5em;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
-/* ================= Section 01：過去＝現在 ================= */
+/* =============== 共用區塊樣式 =============== */
+
+main {
+  padding-bottom: 96px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 0 0 20px;
+}
+
+.section-title-center {
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+
+.section-body {
+  font-size: 0.95rem;
+  color: #3f3030;
+  margin: 0 0 24px;
+}
+
+.section-tag {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+}
+
+/* 共用按鈕 */
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #2d2d2d;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+}
+
+.btn-link:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-small {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+}
+
+.btn-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #2d2d2d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.btn-text {
+  white-space: nowrap;
+}
+
+/* =============== 區塊 01：你的過去 =============== */
 
 .section-past {
-  background-color: var(--bg-main);
+  background-color: #cfb9b7;
 }
 
-.section-past-inner {
+.section-flex {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 40px;
   align-items: center;
 }
 
 .section-past-text {
-  min-width: 260px;
+  font-size: 0.98rem;
 }
 
 .past-card {
-  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con1_bg.webp");
-  background-size: cover;
-  background-position: center;
-  border-radius: 24px;
-  min-height: 260px;
-  padding: 2.5rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.past-people {
-  width: 80%;
-  max-width: 320px;
-}
-
-/* ================= Circle Link（箭頭＋文字按鈕） ================= */
-
-.circle-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 1.2rem;
-  text-decoration: none;
-  color: var(--text-main);
-}
-
-.circle-link-icon {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  border: 2px solid var(--text-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  transform: translateY(-1px);
-}
-
-.circle-link-text {
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.circle-link-small .circle-link-icon {
-  width: 44px;
-  height: 44px;
-  font-size: 1.1rem;
-}
-
-/* ================= Section A：催眠能幫助你什麼 ================= */
-
-.section-help {
-  background-color: var(--bg-main);
-  position: relative;
-}
-
-.help-title {
-  margin-bottom: 1rem;
-}
-
-.help-body {
-  max-width: 560px;
-}
-
-.help-arrow {
-  position: absolute;
-  right: 10%;
-  top: 40%;
-  width: 120px;
-  max-width: 30vw;
-}
-
-/* ================= Step 區塊共用 ================= */
-
-.section-step {
-  position: relative;
-  overflow: hidden;
-}
-
-.section-step .step-inner {
-  position: relative;
-  z-index: 1;
-}
-
-.step-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.95;
-}
-
-.step-text {
-  background-color: rgba(255, 255, 255, 0.86);
-  padding: 2rem 2.4rem;
-  border-radius: 24px;
-  max-width: 520px;
-}
-
-.step-number {
-  font-size: 1.2rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
-}
-
-/* 單一 Step 背景 */
-
-.section-step01 {
-  background-color: var(--bg-step01);
-}
-
-.step-bg01 {
-  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con2_bg.webp");
-}
-
-.section-step02 {
-  background-color: var(--bg-step02);
-}
-
-.step-bg02 {
-  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con3_bg.webp");
-}
-
-.section-step03 {
-  background-color: var(--bg-step03);
-}
-
-.step-bg03 {
-  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con4_bg.webp");
-}
-
-/* ================= 認識心映好事 ================= */
-
-.section-brand {
-  background-color: var(--bg-main);
-}
-
-.brand-inner {
-  align-items: center;
-}
-
-.brand-logo-large {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 0.75rem;
-}
-
-.brand-title {
-  margin-bottom: 0.5rem;
-}
-
-.brand-arch {
   position: relative;
   width: 100%;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #56785d;
-  border-radius: 999px 999px 24px 24px;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  border-radius: 8px;
 }
 
-.brand-arch-image {
+.past-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: contrast(1.02);
 }
 
-.brand-ngh-badge {
-  position: absolute;
-  right: 6%;
-  bottom: 4%;
-  width: 80px;
-}
-
-/* ================= 三拱門 ================= */
-
-.section-doors {
-  background-color: var(--bg-main);
-}
-
-.door-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-
-.door-card {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 24px;
-  padding: 1.8rem 1.6rem 2rem;
-}
-
-.door-arch {
-  background-color: #d7c1bf;
-  border-radius: 999px 999px 24px 24px;
-  padding: 1.4rem 1.4rem 0;
-  margin-bottom: 1.2rem;
-}
-
-.door-arch img {
-  width: 100%;
-  display: block;
-}
-
-.door-title {
-  font-size: 1rem;
-  margin: 0 0 0.75rem;
-}
-
-.door-body {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--text-sub);
-}
-
-/* ================= CTA 光芒背景 ================= */
-
-.section-cta {
-  position: relative;
-  color: var(--text-main);
-}
-
-.cta-bg {
+.past-people {
   position: absolute;
   inset: 0;
-  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/reservetion_img-1.webp");
+  margin: auto;
+  width: 70%;
+}
+
+.past-line-bottom {
+  position: absolute;
+  left: 6%;
+  bottom: 10%;
+  width: 56%;
+}
+
+.past-line-top {
+  position: absolute;
+  right: 6%;
+  top: 6%;
+  width: 30%;
+}
+
+/* =============== 區塊 A：催眠能幫助你什麼 =============== */
+
+.section-help {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.help-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.help-line {
+  width: 220px;
+}
+
+.help-arrow-wrap {
+  margin-top: 24px;
+}
+
+.help-arrow {
+  width: 120px;
+}
+
+/* =============== 三個 Step 區塊 =============== */
+
+.section-step {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.step-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.step-tag {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 6px;
+}
+
+.step-title {
+  font-size: 1.35rem;
+  margin: 0 0 14px;
+}
+
+.step-body {
+  font-size: 0.95rem;
+  margin: 0 0 18px;
+}
+
+.step-visual {
+  width: 100%;
+}
+
+.step-bg {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
   background-size: cover;
   background-position: center;
   opacity: 0.9;
 }
 
-.cta-inner {
+/* 背景圖對應 */
+.step-bg-01 {
+  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con2_bg.webp");
+}
+
+.step-bg-02 {
+  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con3_bg.webp");
+}
+
+.step-bg-03 {
+  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con4_bg.webp");
+}
+
+.step-arrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.step-arrow img {
+  width: 160px;
+}
+
+/* =============== 區塊 05：認識心映好事 =============== */
+
+.section-about {
+  padding-top: 80px;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  font-size: 0.96rem;
+}
+
+.about-logo-mark img {
+  width: 36px;
+  margin-bottom: 12px;
+}
+
+.about-arch {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+}
+
+.about-arch-img {
+  width: 100%;
+  border-radius: 160px 160px 0 0;
+}
+
+.about-ngh {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 80px;
+}
+
+/* =============== 區塊 06：誰適合探索？ =============== */
+
+.section-who {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.who-grid {
+  margin-top: 32px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.who-card {
   text-align: center;
-  max-width: 760px;
-  padding: 3rem 1.5rem;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.86);
-  border-radius: 24px;
+  font-size: 0.95rem;
 }
 
-.cta-link {
-  margin-top: 1.5rem;
+.who-card img {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto 16px;
 }
 
-/* ================= Footer ================= */
+/* =============== 區塊 07：CTA =============== */
+
+.section-cta {
+  position: relative;
+  padding: 80px 0;
+}
+
+.cta-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+}
+
+.cta-inner {
+  text-align: center;
+}
+
+/* =============== Footer =============== */
 
 .site-footer {
-  background-color: var(--bg-main);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 2.5rem 0 2.8rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 24px 0;
+  background-color: #cfb9b7;
 }
 
 .footer-inner {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
   justify-content: space-between;
-}
-
-.footer-left {
-  min-width: 220px;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 0.85rem;
 }
 
 .footer-brand {
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.15em;
-  margin-bottom: 0.6rem;
+  margin: 0 0 4px;
+  font-weight: 600;
 }
 
-.footer-text {
+.footer-left p {
   margin: 0;
-  font-size: 0.9rem;
 }
 
-.footer-text a {
-  color: inherit;
+.footer-separator {
+  margin-left: 12px;
 }
 
 .footer-right {
   text-align: right;
-  min-width: 260px;
-}
-
-.footer-social {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  margin-bottom: 0.7rem;
-}
-
-.social-dot {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--text-main);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: var(--text-main);
 }
 
 .footer-copy {
-  margin: 0 0 0.25rem;
-  font-size: 0.85rem;
+  margin: 0 0 4px;
 }
 
 .footer-privacy {
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: var(--text-main);
+  text-decoration: underline;
 }
 
-/* ================= RWD ================= */
+/* =============== RWD：手機版 =============== */
 
-@media (max-width: 900px) {
-  .hero {
-    height: 70vh;
-    min-height: 420px;
+@media (max-width: 768px) {
+  .nav-inner {
+    justify-content: space-between;
+    gap: 16px;
   }
 
-  .header-inner {
-    height: 80px;
-  }
-
-  .main-nav {
-    gap: 1.1rem;
+  .nav-menu {
+    gap: 16px;
     font-size: 0.8rem;
   }
 
+  .hero {
+    height: 60vh;
+    min-height: 360px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+    letter-spacing: 0.35em;
+  }
+
   .section {
-    padding: 3.5rem 0;
+    padding: 56px 0;
   }
 
-  .section-title {
-    font-size: 1.7rem;
-  }
-
-  .section-split {
-    flex-direction: column;
-  }
-
-  .past-card {
-    margin-top: 1rem;
-  }
-
-  .help-arrow {
-    display: none;
-  }
-
-  .step-text {
-    padding: 1.6rem 1.7rem;
-  }
-
-  .brand-arch {
-    margin-top: 1.8rem;
-  }
-
-  .door-grid {
+  .section-flex,
+  .step-inner,
+  .about-inner,
+  .who-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section-past-visual,
+  .step-visual,
+  .about-visual {
+    order: -1;
+  }
+
+  .who-grid {
+    gap: 24px;
+  }
+
+  .site-footer {
+    padding-top: 20px;
   }
 
   .footer-inner {
     flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .footer-right {
     text-align: left;
-  }
-
-  .footer-social {
-    justify-content: flex-start;
   }
 }
