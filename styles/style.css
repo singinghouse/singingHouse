@@ -1,6 +1,20 @@
-/* =========================
-   基本設定
-   ========================= */
+/* ================= 基本設定 ================= */
+
+:root {
+  --bg-main: #cfb9b7;
+  --bg-light: #e7d7d5;
+  --bg-step01: #e7d7d5;
+  --bg-step02: #d9e1e8;
+  --bg-step03: #e6dad6;
+  --text-main: #2d2d2d;
+  --text-sub: #4a3f3f;
+  --white: #ffffff;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Noto Sans TC",
+    "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+
+  --container-width: 1120px;
+}
 
 *,
 *::before,
@@ -15,441 +29,392 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC",
-    "PingFang TC", "Microsoft JhengHei", sans-serif;
-  background-color: #cfb9b7;
-  color: #2d2d2d;
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: var(--bg-main);
   line-height: 1.7;
 }
 
-/* 容器寬度 */
+/* ================= 通用元件 ================= */
+
 .container {
-  width: min(1120px, 100% - 48px);
+  width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-/* 通用標題文字大小（桌機版） */
+.section {
+  padding: 5rem 0;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.section-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.section-split > * {
+  flex: 1 1 280px;
+}
+
 .section-title {
-  font-size: 28px;
-  letter-spacing: 0.1em;
-  margin: 0 0 12px;
+  font-size: 2.1rem;
+  letter-spacing: 0.12em;
+  margin: 0 0 1.2rem;
 }
 
-.section-subtitle {
-  font-size: 18px;
-  margin: 8px 0 16px;
+.section-sub {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
 }
 
 .section-body {
-  font-size: 16px;
-  margin: 0 0 16px;
+  margin: 0 0 1.1rem;
+  font-size: 1rem;
+  color: var(--text-sub);
 }
 
-/* 小標：01 / 02 / 03 */
-.section-label {
-  font-size: 14px;
-  letter-spacing: 0.25em;
+.eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin: 0 0 0.8rem;
+  color: var(--text-sub);
 }
 
-/* 主要色系 */
-:root {
-  --bg-main: #cfb9b7;
-  --bg-deep: #bda19f;
-  --text-main: #2d2d2d;
-  --accent-dark: #2d2d2d;
-  --accent-green: #3a6c55;
+.center {
+  text-align: center;
 }
 
-/* =========================
-   Header / 導覽列
-   ========================= */
+/* ================= Header ================= */
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
-  background-color: #cfb9b7;
-  height: 100px;
-  display: flex;
-  align-items: center;
+  z-index: 40;
+  background-color: rgba(207, 185, 183, 0.96);
+  backdrop-filter: blur(10px);
 }
 
 .header-inner {
-  width: min(1120px, 100% - 48px);
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100px;
 }
 
-/* 左側小圓點 */
-.brand-mark {
+.brand {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   text-decoration: none;
-  margin-right: 16px;
+  color: var(--text-main);
 }
 
-.brand-dot {
-  width: 24px;
-  height: 24px;
-  border-radius: 999px;
-  background-color: #2d2d2d;
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  display: block;
 }
 
-/* 中間品牌文字 */
 .brand-name {
   font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  color: #2d2d2d;
-  margin-right: auto;
-  margin-left: 16px;
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
 }
 
-/* 右側選單 */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 1.8rem;
+  font-size: 0.95rem;
 }
 
 .main-nav a {
   text-decoration: none;
-  color: #2d2d2d;
-  font-size: 16px;
-  letter-spacing: 0.12em;
+  color: var(--text-main);
+  letter-spacing: 0.15em;
+  position: relative;
 }
 
-.main-nav a:hover {
-  text-decoration: underline;
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 0;
+  height: 1px;
+  background-color: var(--text-main);
+  transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
 }
 
 .main-nav .nav-cta {
-  padding: 6px 14px;
+  padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  border: 1px solid #2d2d2d;
+  border: 1px solid var(--text-main);
 }
 
-/* =========================
-   Hero 區（影片）
-   ========================= */
+/* ================= Hero ================= */
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 100px);
+  min-height: 520px;
   overflow: hidden;
 }
 
-.hero-media,
 .hero-video {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-media {
   position: absolute;
   inset: 0;
-  overflow: hidden;
-}
-
-.hero-video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 .hero-overlay {
   position: relative;
   z-index: 1;
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
 }
 
-.hero-overlay h1 {
-  color: #ffffff;
-  font-size: 40px;
-  letter-spacing: 0.3em;
+.hero-title {
+  color: var(--white);
+  font-size: 2.4rem;
+  letter-spacing: 0.5em;
+  text-align: center;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
-/* =========================
-   區塊共用樣式
-   ========================= */
+/* ================= Section 01：過去＝現在 ================= */
 
-.section {
-  padding: 80px 0;
-  position: relative;
-}
-
-.section-flex {
-  display: flex;
-  gap: 48px;
-}
-
-/* 手機後會改成直向排列 */
-.section-past-text,
-.section-past-visual {
-  flex: 1;
-}
-
-/* 區塊背景圖用 ::before 或獨立元素 */
 .section-past {
-  background-color: #cfb9b7;
+  background-color: var(--bg-main);
 }
 
-/* 讓背景圖鋪滿區塊右側 */
-.section-past-visual {
+.section-past-inner {
+  align-items: center;
+}
+
+.section-past-text {
+  min-width: 260px;
+}
+
+.past-card {
+  background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con1_bg.webp");
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  min-height: 260px;
+  padding: 2.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.past-illustration img {
-  width: 100%;
-  max-width: 360px;
+.past-people {
+  width: 80%;
+  max-width: 320px;
 }
 
-/* 圓形箭頭按鈕（閱讀更多） */
-.round-arrow-link {
+/* ================= Circle Link（箭頭＋文字按鈕） ================= */
+
+.circle-link {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
   text-decoration: none;
-  color: #2d2d2d;
+  color: var(--text-main);
 }
 
-.round-arrow-icon {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  background-color: #2d2d2d;
-  position: relative;
+.circle-link-icon {
   flex-shrink: 0;
-}
-
-.arrow-diagonal {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
-  border-top: 4px solid #f4ece5;
-  border-right: 4px solid #f4ece5;
-  transform: rotate(45deg);
-  top: 8px;
-  left: 8px;
-}
-
-.round-arrow-text {
-  font-size: 18px;
-  letter-spacing: 0.1em;
-}
-
-/* =========================
-   區塊 A：催眠能幫助你什麼？
-   ========================= */
-
-.section-help {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.section-help-header {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--text-main);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 1.4rem;
+  transform: translateY(-1px);
 }
 
-.help-title-wrap {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 8px;
+.circle-link-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.circle-link-small .circle-link-icon {
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+}
+
+/* ================= Section A：催眠能幫助你什麼 ================= */
+
+.section-help {
+  background-color: var(--bg-main);
+  position: relative;
 }
 
 .help-title {
-  margin: 0;
-  font-size: 26px;
-  letter-spacing: 0.24em;
+  margin-bottom: 1rem;
 }
 
-.help-title-line {
-  width: 220px;
-  max-width: 100%;
+.help-body {
+  max-width: 560px;
 }
 
 .help-arrow {
+  position: absolute;
+  right: 10%;
+  top: 40%;
   width: 120px;
-  max-width: 40%;
+  max-width: 30vw;
 }
 
-/* =========================
-   Step 區塊共用：02 / 03 / 04
-   ========================= */
+/* ================= Step 區塊共用 ================= */
 
 .section-step {
   position: relative;
-  color: #2d2d2d;
   overflow: hidden;
 }
 
-/* 統一一層淡底，背景圖再放上去 */
-.section-step-inner {
+.section-step .step-inner {
   position: relative;
   z-index: 1;
 }
 
-.section-bg {
+.step-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
-/* 三張背景圖 */
-.section-bg-01 {
+.step-text {
+  background-color: rgba(255, 255, 255, 0.86);
+  padding: 2rem 2.4rem;
+  border-radius: 24px;
+  max-width: 520px;
+}
+
+.step-number {
+  font-size: 1.2rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+/* 單一 Step 背景 */
+
+.section-step01 {
+  background-color: var(--bg-step01);
+}
+
+.step-bg01 {
   background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con2_bg.webp");
 }
 
-.section-bg-02 {
+.section-step02 {
+  background-color: var(--bg-step02);
+}
+
+.step-bg02 {
   background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con3_bg.webp");
 }
 
-.section-bg-03 {
+.section-step03 {
+  background-color: var(--bg-step03);
+}
+
+.step-bg03 {
   background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/index_con4_bg.webp");
 }
 
-/* 讓文字有底色比較清楚 */
-.section-step-inner {
-  padding: 40px 32px;
-  background-color: rgba(207, 185, 183, 0.9);
-  max-width: 640px;
+/* ================= 認識心映好事 ================= */
+
+.section-brand {
+  background-color: var(--bg-main);
 }
 
-/* Step 文字區 */
-.step-text {
-  position: relative;
-}
-
-.step-title-wrap {
-  margin-bottom: 16px;
-}
-
-.step-title {
-  margin: 8px 0;
-  font-size: 22px;
-}
-
-.step-title-line-top,
-.step-title-line-bottom {
-  display: block;
-  width: 260px;
-  max-width: 100%;
-}
-
-.step-arrow {
-  width: 80px;
-  margin-top: 16px;
-}
-
-/* =========================
-   區塊 05：認識心映好事（綠拱門）
-   ========================= */
-
-.section-about-brand {
-  background-color: #cfb9b7;
-}
-
-.about-brand-inner {
-  display: flex;
-  gap: 48px;
+.brand-inner {
   align-items: center;
 }
 
-.about-left {
-  flex: 1;
+.brand-logo-large {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.75rem;
 }
 
-.about-logo {
-  width: 72px;
-  height: auto;
-  margin-bottom: 12px;
+.brand-title {
+  margin-bottom: 0.5rem;
 }
 
-.about-title {
-  font-size: 26px;
-  margin: 0 0 12px;
-}
-
-.about-arch-wrap {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.about-arch {
+.brand-arch {
   position: relative;
-  width: 260px;
-  max-width: 100%;
-  border-radius: 260px 260px 0 0;
+  width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #56785d;
+  border-radius: 999px 999px 24px 24px;
   overflow: hidden;
 }
 
-.about-arch-bg {
+.brand-arch-image {
   width: 100%;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
-.about-arch-ngh {
+.brand-ngh-badge {
   position: absolute;
-  right: 12px;
-  bottom: 12px;
-  width: 72px;
+  right: 6%;
+  bottom: 4%;
+  width: 80px;
 }
 
-/* =========================
-   區塊 06：誰適合探索？三門
-   ========================= */
+/* ================= 三拱門 ================= */
 
 .section-doors {
-  background-color: #cfb9b7;
+  background-color: var(--bg-main);
 }
 
-.doors-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.doors-tag {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 999px;
-  border: 1px solid #2d2d2d;
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.doors-grid {
+.door-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  gap: 2rem;
+  margin-top: 2.5rem;
 }
 
 .door-card {
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 1.8rem 1.6rem 2rem;
 }
 
 .door-arch {
-  border-radius: 220px 220px 0 0;
-  overflow: hidden;
-  background-color: #bda19f;
-  margin-bottom: 16px;
+  background-color: #d7c1bf;
+  border-radius: 999px 999px 24px 24px;
+  padding: 1.4rem 1.4rem 0;
+  margin-bottom: 1.2rem;
 }
 
 .door-arch img {
@@ -458,22 +423,21 @@ body {
 }
 
 .door-title {
-  margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
 }
 
-.door-text {
+.door-body {
   margin: 0;
-  font-size: 15px;
+  font-size: 0.95rem;
+  color: var(--text-sub);
 }
 
-/* =========================
-   區塊 07：CTA 光芒背景
-   ========================= */
+/* ================= CTA 光芒背景 ================= */
 
 .section-cta {
   position: relative;
-  padding: 80px 0;
+  color: var(--text-main);
 }
 
 .cta-bg {
@@ -482,187 +446,153 @@ body {
   background-image: url("https://singingtsai.com/wp-content/uploads/2025/03/reservetion_img-1.webp");
   background-size: cover;
   background-position: center;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .cta-inner {
   position: relative;
   z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  padding: 3rem 1.5rem;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.86);
+  border-radius: 24px;
 }
 
-.cta-text-block {
-  max-width: 520px;
-  padding: 40px 32px;
-  background-color: rgba(207, 185, 183, 0.98);
+.cta-link {
+  margin-top: 1.5rem;
 }
 
-/* 主行動按鈕 */
-.primary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 16px;
-  padding: 10px 24px;
-  border-radius: 999px;
-  border: 1px solid #2d2d2d;
-  background-color: #2d2d2d;
-  color: #fdf7f3;
-  text-decoration: none;
-  font-size: 16px;
-  letter-spacing: 0.08em;
-}
-
-/* =========================
-   Footer
-   ========================= */
+/* ================= Footer ================= */
 
 .site-footer {
-  background-color: #cfb9b7;
-  padding: 32px 0 40px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--bg-main);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 2.5rem 0 2.8rem;
 }
 
 .footer-inner {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: space-between;
-  gap: 32px;
-  align-items: flex-start;
 }
 
 .footer-left {
-  max-width: 60%;
+  min-width: 220px;
 }
 
 .footer-brand {
-  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-bottom: 8px;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.6rem;
 }
 
-.footer-contact {
-  font-size: 15px;
+.footer-text {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
-.footer-contact a {
-  color: #2d2d2d;
+.footer-text a {
+  color: inherit;
 }
 
-.footer-contact-sep {
-  margin-left: 8px;
-}
-
-/* 右側 */
 .footer-right {
   text-align: right;
-  font-size: 14px;
+  min-width: 260px;
 }
 
 .footer-social {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
-.social-circle {
+.social-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--text-main);
   display: inline-flex;
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  border: 1px solid #2d2d2d;
   align-items: center;
   justify-content: center;
+  font-size: 0.8rem;
   text-decoration: none;
-  font-size: 12px;
-  color: #2d2d2d;
+  color: var(--text-main);
 }
 
 .footer-copy {
-  margin-bottom: 4px;
+  margin: 0 0 0.25rem;
+  font-size: 0.85rem;
 }
 
 .footer-privacy {
-  color: #2d2d2d;
-  text-decoration: underline;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--text-main);
 }
 
-/* =========================
-   RWD：手機版調整
-   ========================= */
+/* ================= RWD ================= */
 
-@media (max-width: 768px) {
-  .site-header {
-    height: auto;
+@media (max-width: 900px) {
+  .hero {
+    height: 70vh;
+    min-height: 420px;
   }
 
   .header-inner {
-    flex-wrap: wrap;
-    gap: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  .brand-name {
-    font-size: 18px;
-    margin-left: 12px;
-  }
-
-  .main-nav {
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .hero-overlay h1 {
-    font-size: 28px;
-  }
-
-  .section {
-    padding: 56px 0;
-  }
-
-  .section-flex {
-    flex-direction: column;
-  }
-
-  .round-arrow-link {
-    align-items: flex-start;
-  }
-
-  .round-arrow-icon {
-    width: 80px;
     height: 80px;
   }
 
-  .round-arrow-text {
-    font-size: 16px;
+  .main-nav {
+    gap: 1.1rem;
+    font-size: 0.8rem;
   }
 
-  .section-step-inner {
-    max-width: none;
-    padding: 32px 20px;
+  .section {
+    padding: 3.5rem 0;
   }
 
-  .about-brand-inner {
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .section-split {
     flex-direction: column;
   }
 
-  .doors-grid {
-    grid-template-columns: 1fr;
+  .past-card {
+    margin-top: 1rem;
   }
 
-  .cta-text-block {
-    max-width: none;
+  .help-arrow {
+    display: none;
+  }
+
+  .step-text {
+    padding: 1.6rem 1.7rem;
+  }
+
+  .brand-arch {
+    margin-top: 1.8rem;
+  }
+
+  .door-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-inner {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .footer-right {
     text-align: left;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
   }
 }
