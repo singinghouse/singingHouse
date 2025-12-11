@@ -1,355 +1,668 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      心映好事｜NGH認證催眠師／插畫家 Hsinyi 💫 催眠療癒 💫 內在力量 💫 自我成長 💫 潛意識探索｜陪伴妳一起穿越、一起發現新的自己
+    </title>
+    <meta
+      name="description"
+      content="NGH認證催眠師／插畫家 Hsinyi｜以溫柔的方式陪妳一起看見潛意識，梳理情緒、喚醒內在力量，陪伴妳穿越各種人生階段。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>
-    心映好事｜NGH認證催眠師／插畫家 Hsinyi 💫 催眠療癒 💫 內在力量 💫 自我成長 💫 潛意識探索｜陪伴妳一起穿越、一起發現新的自己
-  </title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandBg: "#CFB9B7",
+              brandText: "#2D2D2D",
+              brandDark: "#2D2D2D",
+              brandAccent: "#4E6A68",
+            },
+            fontFamily: {
+              sans: ['"Noto Sans TC"', "system-ui", "sans-serif"],
+            },
+            boxShadow: {
+              soft: "0 18px 45px rgba(0,0,0,0.08)",
+            },
+          },
+        },
+      };
+    </script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="NGH認證催眠師／插畫家 Hsinyi 💫 催眠療癒 💫 內在力量 💫 自我成長 💫 潛意識探索｜陪伴妳一起穿越、一起發現新的自己"
-  />
+    <!-- Noto Sans TC（可換成你喜歡的字體） -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap"
+    />
 
-  <!-- 字體 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
+    <style>
+      html,
+      body {
+        scroll-behavior: smooth;
+      }
 
-  <!-- 網站樣式：請確認檔名就是 style.css 並與本檔同一層 -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- ====================  頂端導覽列  ==================== -->
-  <header class="site-header">
-    <div class="nav-inner">
-      <!-- 左：小 Logo -->
-      <a href="index.html" class="nav-logo">
-        <img
-          src="https://singingtsai.com/wp-content/uploads/2025/03/logo_166-1.svg"
-          alt="心映好事 Logo"
-        />
-      </a>
+      /* 拱門卡片的圓角造型 */
+      .arch-card {
+        border-top-left-radius: 999px;
+        border-top-right-radius: 999px;
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+      }
 
-      <!-- 中：心映好事 logotype -->
-      <div class="nav-brand">
-        心映好事
-      </div>
+      .text-shadow-soft {
+        text-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+      }
+    </style>
+  </head>
 
-      <!-- 右：選單 -->
-      <nav class="nav-menu">
-        <a href="about.html">關於心怡</a>
-        <a href="cosmos.html">宇宙放映室</a>
-        <a href="journal.html">心映日誌</a>
-        <a href="booking.html">預約陪伴</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ====================  Hero 影片區  ==================== -->
-  <section class="hero">
-    <video
-      class="hero-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      poster="https://singingtsai.com/wp-content/uploads/2025/12/herobg-scaled.webp"
+  <body class="bg-brandBg text-brandText font-sans">
+    <!-- ======================= 導覽列 ======================= -->
+    <header
+      class="fixed top-0 inset-x-0 z-40 bg-brandBg/92 backdrop-blur border-b border-[#c3a9a8]"
     >
-      <source src="assets/video/hero-home.mp4" type="video/mp4" />
-    </video>
-
-    <div class="hero-overlay">
-      <h1 class="hero-title">心映好事</h1>
-    </div>
-  </section>
-
-  <main>
-    <!-- ====================  區塊 01：你的過去＝現在的你？  ==================== -->
-    <section class="section section-past">
-      <div class="container section-flex">
-        <div class="section-past-text">
-          <p class="section-tag">心靈深處</p>
-          <h2 class="section-title">「你的過去＝現在的你？」</h2>
-
-          <p class="section-subtitle">
-            「你的過去，是否悄悄影響現在的你？」<br />
-            你可能早就習慣用「沒事啦」帶過那些心裡的小刺，直到某一天才發現——
-          </p>
-
-          <p class="section-body">
-            這裡是一個幫你梳理生命故事的空間，像是在寫給自己的日記。<br />
-            我們會一起回到某個關鍵片刻，看見當時的你正在經歷什麼，溫柔整理那些被壓抑的感受。
-          </p>
-
-          <a href="booking.html" class="btn-link">
-            <span class="btn-icon">↗</span>
-            <span class="btn-text">了解你的內在節奏</span>
+      <nav class="max-w-6xl mx-auto px-4 lg:px-6">
+        <div class="flex items-center justify-between h-24">
+          <!-- 左：logo 圖示 -->
+          <a
+            href="index.html"
+            class="flex items-center gap-2 shrink-0"
+            aria-label="回到首頁"
+          >
+            <img
+              src="https://singingtsai.com/wp-content/uploads/2025/03/logo_166-1.svg"
+              alt="心映好事 logo"
+              class="h-9 w-auto"
+            />
           </a>
-        </div>
 
-        <div class="section-past-visual">
-          <div class="past-card">
-            <img
-              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con1_bg.webp"
-              alt="你的過去背景"
-              class="past-bg"
-            />
-            <img
-              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con1_img-1.svg"
-              alt="兩個人輪廓插畫"
-              class="past-people"
-            />
+          <!-- 中：心映好事 logotype / 文字 -->
+          <div class="hidden md:block">
+            <span class="tracking-[0.3em] text-sm text-brandDark">
+              心　映　好　事
+            </span>
+          </div>
+
+          <!-- 右：選單 -->
+          <div class="flex items-center gap-6 text-sm">
+            <a href="index.html" class="hover:opacity-75">心映好事</a>
+            <a href="about.html" class="hover:opacity-75">關於心怡</a>
+            <a href="universe.html" class="hover:opacity-75">宇宙放映室</a>
+            <a href="journal.html" class="hover:opacity-75">心映日誌</a>
+            <a
+              href="booking.html"
+              class="hidden sm:inline-flex items-center justify-center rounded-full border border-brandDark/30 px-4 py-1.5 text-xs tracking-[0.15em] hover:bg-brandDark hover:text-brandBg transition"
+            >
+              預約陪伴
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ======================= 主內容 ======================= -->
+    <main class="pt-24">
+      <!-- ========== HERO：影片區 ========== -->
+      <section
+        class="relative w-full h-[80vh] min-h-[520px] overflow-hidden bg-black"
+      >
+        <!-- hero 影片 -->
+        <video
+          class="absolute inset-0 w-full h-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="https://singingtsai.com/wp-content/uploads/2025/12/herobg-scaled.webp"
+        >
+          <source src="assets/videos/hero-home.mp4" type="video/mp4" />
+        </video>
+
+        <!-- 上方柔和漸層遮罩 -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/10 to-brandBg/40"
+        ></div>
+
+        <!-- 中央文字 -->
+        <div
+          class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4"
+        >
+          <p class="text-xs tracking-[0.6em] mb-3 text-shadow-soft">
+            HYPNOSIS · INNER POWER · SELF DISCOVERY
+          </p>
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-medium tracking-[0.35em] text-shadow-soft"
+          >
+            心　映　好　事
+          </h1>
+          <p class="mt-6 max-w-xl text-sm sm:text-base leading-relaxed">
+            當你願意為自己停下來，世界就會慢一點，
+            讓你有空間好好看見、好好被接住。
+          </p>
+        </div>
+      </section>
+
+      <!-- ========== 區塊 01｜你的過去＝現在的你？ ========== -->
+      <section class="py-16 sm:py-20">
+        <div
+          class="max-w-6xl mx-auto px-4 lg:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center"
+        >
+          <!-- 左：文字 -->
+          <div>
+            <p class="text-xs tracking-[0.35em] mb-3">SECTION 01</p>
+
+            <h2 class="text-2xl sm:text-3xl font-semibold leading-relaxed mb-4">
+              「你的過去 ＝
+              <br class="hidden sm:block" />
+              現在的你？」
+            </h2>
+
+            <!-- 下方線條 -->
             <img
               src="https://singingtsai.com/wp-content/uploads/2025/03/index_con1_title_line1.svg"
               alt=""
-              class="past-line-bottom"
+              class="h-2 w-auto mb-6"
             />
-            <img
-              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titleSEC_line1.svg"
-              alt=""
-              class="past-line-top"
-            />
+
+            <p class="text-sm leading-relaxed mb-3">
+              有些一直反覆出現的情緒、關係模式，可能不是你太脆弱，
+              而是那些還沒被看見的故事，正在默默影響現在的你。
+            </p>
+            <p class="text-sm leading-relaxed mb-6">
+              催眠就像一盞溫柔的閱讀燈，陪你一起翻開那些被壓在心底的篇章，
+              看見你是怎麼一路走到這裡，並重新選擇接下來的方向。
+            </p>
+
+            <div class="flex items-center gap-3 mt-4">
+              <a
+                href="about.html"
+                class="inline-flex items-center gap-2 text-xs tracking-[0.2em] group"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brandDark text-brandBg text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                >
+                  ↗
+                </span>
+                <span class="flex flex-col leading-relaxed">
+                  <span>想多認識一點</span>
+                  <span class="text-[11px] opacity-70">
+                    了解我為什麼選擇成為催眠師
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 右：圖像 + 背景 -->
+          <div
+            class="relative rounded-3xl overflow-hidden shadow-soft bg-[#dcbfb8]"
+          >
+            <div
+              class="absolute inset-0 bg-center bg-cover opacity-60"
+              style="background-image: url('https://singingtsai.com/wp-content/uploads/2025/03/index_con1_bg.webp');"
+            ></div>
+
+            <div
+              class="relative flex items-center justify-center py-14 px-6 sm:px-10"
+            >
+              <img
+                src="https://singingtsai.com/wp-content/uploads/2025/03/index_con1_img-1.svg"
+                alt="你的過去＝現在的你？"
+                class="w-[70%] max-w-xs"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ====================  區塊 A：催眠能幫助你什麼？  ==================== -->
-    <section class="section section-help">
-      <div class="container">
-        <div class="help-header">
-          <img
-            src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titlearea_line.svg"
-            alt="催眠標題線"
-            class="help-line"
-          />
-          <h2 class="section-title">催眠能幫助你什麼？</h2>
-        </div>
+      <!-- ========== 區塊 A ｜催眠能幫助你什麼？ 標題帶箭頭 ========== -->
+      <section class="pb-4">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6">
+          <div class="flex items-center gap-6">
+            <div>
+              <img
+                src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titlearea_line.svg"
+                alt="催眠"
+                class="h-6 w-auto mb-1"
+              />
+              <p class="text-xl sm:text-2xl font-semibold">
+                催眠能幫助你什麼？
+              </p>
+            </div>
 
-        <div class="help-arrow-wrap">
-          <img
-            src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titlearea_arrow.svg"
-            alt="向下箭頭"
-            class="help-arrow"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================  區塊 02：直擊潛意識底層  ==================== -->
-    <section class="section section-step section-step-01">
-      <div class="container step-inner">
-        <div class="step-text">
-          <div class="step-tag">01</div>
-          <h3 class="step-title">直擊潛意識底層的問題根源</h3>
-
-          <p class="step-body">
-            把那些反覆出現的情緒、卡關的模式，溫柔地拉到光線裡。<br />
-            我們不急著改變你，而是先一起看懂：這些感受從哪裡來。
-          </p>
-
-          <a href="booking.html" class="btn-link btn-small">
-            <span class="btn-icon">↗</span>
-            <span class="btn-text">預約了解更多</span>
-          </a>
-        </div>
-
-        <div class="step-visual">
-          <div class="step-bg step-bg-01"></div>
-        </div>
-      </div>
-
-      <div class="step-arrow">
-        <img
-          src="https://singingtsai.com/wp-content/uploads/2025/03/index_con3_titlearea_arrow.svg"
-          alt="箭頭"
-        />
-      </div>
-    </section>
-
-    <!-- ====================  區塊 03：喚醒內在力量  ==================== -->
-    <section class="section section-step section-step-02">
-      <div class="container step-inner">
-        <div class="step-text">
-          <div class="step-tag">02</div>
-          <h3 class="step-title">喚醒內在力量，療癒過去的創傷</h3>
-
-          <p class="step-body">
-            我們不勉強你原諒誰，而是陪你把心拉回自己身上。<br />
-            讓那些曾經很痛的故事，慢慢變成支持你的力量。
-          </p>
-
-          <a href="booking.html" class="btn-link btn-small">
-            <span class="btn-icon">↗</span>
-            <span class="btn-text">一步一步靠近自己</span>
-          </a>
-        </div>
-
-        <div class="step-visual">
-          <div class="step-bg step-bg-02"></div>
-        </div>
-      </div>
-
-      <div class="step-arrow">
-        <img
-          src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titlearea_arrow.svg"
-          alt="箭頭"
-        />
-      </div>
-    </section>
-
-    <!-- ====================  區塊 04：重建平衡  ==================== -->
-    <section class="section section-step section-step-03">
-      <div class="container step-inner">
-        <div class="step-text">
-          <div class="step-tag">03</div>
-          <h3 class="step-title">重建內心的平衡，創造全新的可能性</h3>
-
-          <p class="step-body">
-            當你真正看見自己、允許感受存在的那一刻，<br />
-            很多你以為「只能這樣了」的地方，其實會長出新的選擇。
-          </p>
-
-          <a href="booking.html" class="btn-link btn-small">
-            <span class="btn-icon">↗</span>
-            <span class="btn-text">試試不同的未來路徑</span>
-          </a>
-        </div>
-
-        <div class="step-visual">
-          <div class="step-bg step-bg-03"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================  區塊 05：認識心映好事  ==================== -->
-    <section class="section section-about">
-      <div class="container about-inner">
-        <div class="about-text">
-          <div class="about-logo-mark">
-            <img
-              src="https://singingtsai.com/wp-content/uploads/2025/03/logo_166-1.svg"
-              alt="心映好事 Logo"
-            />
+            <div class="hidden sm:block flex-1">
+              <img
+                src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titlearea_arrow.svg"
+                alt=""
+                class="h-8 w-auto ml-auto"
+              />
+            </div>
           </div>
-          <h2 class="section-title">認識心映好事</h2>
-          <p class="section-body">
-            心映好事是一個結合催眠、插畫與故事的空間，<br />
-            在柔軟的陪伴裡，讓你慢慢練習跟自己站在同一邊。
-          </p>
+        </div>
+      </section>
 
-          <a href="about.html" class="btn-link btn-small">
-            <span class="btn-icon">↗</span>
-            <span class="btn-text">看看我們在做什麼</span>
-          </a>
+      <!-- ========== 區塊 02｜直擊潛意識底層 ========== -->
+      <section class="pb-16 sm:pb-20">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6">
+          <div
+            class="relative rounded-3xl overflow-hidden shadow-soft bg-[#d7dfe5]"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-70"
+              style="background-image: url('https://singingtsai.com/wp-content/uploads/2025/03/index_con2_bg.webp');"
+            ></div>
+
+            <div
+              class="relative grid md:grid-cols-[minmax(0,0.6fr),minmax(0,1.4fr)] gap-6 md:gap-10 py-10 sm:py-14 px-6 sm:px-10"
+            >
+              <div class="flex flex-col gap-4">
+                <p class="text-xs tracking-[0.35em]">STEP 01</p>
+                <h3 class="text-xl sm:text-2xl font-semibold">
+                  直擊潛意識底層，
+                  <br />
+                  找到真正的問題根源
+                </h3>
+
+                <img
+                  src="https://singingtsai.com/wp-content/uploads/2025/03/index_con2_titleSEC_line.svg"
+                  alt="現在的你？"
+                  class="h-3 w-auto mt-1"
+                />
+
+                <p class="text-xs sm:text-sm leading-relaxed mt-3">
+                  很多時候，我們以為自己「想太多了」、「太敏感」，
+                  其實只是那些還沒被理解的感受，一直在找機會被看見。
+                </p>
+                <p class="text-xs sm:text-sm leading-relaxed">
+                  催眠會陪你一起回到那個起點，看到事情是怎麼發生的，
+                  理解當時的你是如何努力活下來，讓潛意識知道「現在已經安全了」。
+                </p>
+              </div>
+
+              <div class="flex items-end justify-end">
+                <a
+                  href="booking.html"
+                  class="inline-flex items-center gap-2 text-xs tracking-[0.2em] bg-brandDark/80 text-brandBg px-4 py-2 rounded-full hover:bg-brandDark transition"
+                >
+                  <span>從這裡開始預約</span>
+                  <span class="text-base -mt-px">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 區塊 03｜喚醒內在力量 ========== -->
+      <section class="pb-16 sm:pb-20">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6">
+          <div
+            class="relative rounded-3xl overflow-hidden shadow-soft bg-[#cdd8de]"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-70"
+              style="background-image: url('https://singingtsai.com/wp-content/uploads/2025/03/index_con3_bg.webp');"
+            ></div>
+
+            <div
+              class="relative grid md:grid-cols-[minmax(0,0.6fr),minmax(0,1.4fr)] gap-6 md:gap-10 py-10 sm:py-14 px-6 sm:px-10"
+            >
+              <div class="flex flex-col gap-4">
+                <p class="text-xs tracking-[0.35em]">STEP 02</p>
+                <h3 class="text-xl sm:text-2xl font-semibold">
+                  喚醒內在力量，
+                  <br />
+                  療癒過去的創傷
+                </h3>
+
+                <img
+                  src="https://singingtsai.com/wp-content/uploads/2025/03/index_con3_titleSEC_line.svg"
+                  alt="療癒過去的創傷"
+                  class="h-3 w-auto mt-1"
+                />
+
+                <p class="text-xs sm:text-sm leading-relaxed mt-3">
+                  當你把那些被壓抑的情緒好好說出口、被好好理解，
+                  你就不再只是「當時那個無助的自己」，
+                  而是擁有選擇權的大人版本的你。
+                </p>
+                <p class="text-xs sm:text-sm leading-relaxed">
+                  催眠讓你在安全的狀態下，重新連結自己的力量，
+                  讓過去的自己被安放，現在的你可以往前走。
+                </p>
+              </div>
+
+              <div class="flex items-end justify-end">
+                <img
+                  src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titlearea_arrow.svg"
+                  alt=""
+                  class="h-10 w-auto opacity-80"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 區塊 04｜重建平衡 ========== -->
+      <section class="pb-16 sm:pb-20">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6">
+          <div
+            class="relative rounded-3xl overflow-hidden shadow-soft bg-[#e0d5d1]"
+          >
+            <div
+              class="absolute inset-0 bg-cover bg-center opacity-70"
+              style="background-image: url('https://singingtsai.com/wp-content/uploads/2025/03/index_con4_bg.webp');"
+            ></div>
+
+            <div
+              class="relative grid md:grid-cols-[minmax(0,0.6fr),minmax(0,1.4fr)] gap-6 md:gap-10 py-10 sm:py-14 px-6 sm:px-10"
+            >
+              <div class="flex flex-col gap-4">
+                <p class="text-xs tracking-[0.35em]">STEP 03</p>
+                <h3 class="text-xl sm:text-2xl font-semibold">
+                  重建內心的平衡，
+                  <br />
+                  創造全新的可能性
+                </h3>
+
+                <img
+                  src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titleSEC_line1.svg"
+                  alt="重建"
+                  class="h-3 w-auto mt-1"
+                />
+                <img
+                  src="https://singingtsai.com/wp-content/uploads/2025/03/index_con4_titleSEC_line2.svg"
+                  alt="全新的可能性"
+                  class="h-3 w-auto"
+                />
+
+                <p class="text-xs sm:text-sm leading-relaxed mt-3">
+                  當內在的拉扯慢慢鬆開，你會發現，自己開始可以做出更溫柔、
+                  更貼近自己的選擇，而不是只是「撐住」或「硬撐下去」。
+                </p>
+              </div>
+
+              <div class="flex items-end justify-end">
+                <span
+                  class="inline-flex items-center justify-center rounded-full bg-brandDark/85 text-brandBg px-4 py-2 text-xs tracking-[0.2em]"
+                >
+                  一起讓生活回到剛剛好的位置
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 區塊 05｜認識心映好事 ========== -->
+      <section class="pb-16 sm:pb-20">
+        <div
+          class="max-w-6xl mx-auto px-4 lg:px-6 grid md:grid-cols-[minmax(0,0.9fr),minmax(0,1.1fr)] gap-10 md:gap-16 items-center"
+        >
+          <!-- 左：文字 -->
+          <div>
+            <p class="text-xs tracking-[0.35em] mb-3">ABOUT SINGING TSAI</p>
+            <h2 class="text-2xl sm:text-3xl font-semibold mb-2">
+              認識心映好事
+            </h2>
+            <p class="text-sm leading-relaxed mb-4">
+              我是 Hsinyi，是一位 NGH 認證催眠師，也是插畫創作者。
+              我相信，每一個人的心裡都曾經努力過，只是有時候，
+              你需要一個空間，可以好好說、好好喘息。
+            </p>
+            <p class="text-sm leading-relaxed mb-6">
+              「心映好事」想陪你一起練習，把內在世界整理好一點點，
+              讓外在的世界，慢慢也跟著變得比較柔軟。
+            </p>
+
+            <a
+              href="about.html"
+              class="inline-flex items-center gap-2 text-xs tracking-[0.2em] group"
+            >
+              <span
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brandDark text-brandBg text-lg group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+              >
+                ↗
+              </span>
+              <span class="flex flex-col leading-relaxed">
+                <span>閱讀更多關於我的故事</span>
+                <span class="text-[11px] opacity-70">
+                  看看我是怎麼走到催眠與插畫這條路
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <!-- 右：綠色拱門卡 -->
+          <div class="relative flex justify-center md:justify-end">
+            <div
+              class="arch-card bg-[#496e5c] w-full max-w-sm aspect-[3/4] relative overflow-hidden shadow-soft"
+            >
+              <!-- NGH logo -->
+              <img
+                src="https://singingtsai.com/wp-content/uploads/2025/03/logo_NGH_w200.svg"
+                alt="NGH 認證"
+                class="absolute right-6 bottom-6 w-16 opacity-90"
+              />
+
+              <!-- 內部主圖（目前先用鑰匙門） -->
+              <div
+                class="absolute inset-0 bg-center bg-cover opacity-75"
+                style="background-image: url('https://singingtsai.com/wp-content/uploads/2025/03/index_con6_door_img01.webp');"
+              ></div>
+
+              <!-- 半透明遮罩 -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#2c4333]/70 via-[#2c4333]/10 to-transparent"
+              ></div>
+
+              <div class="relative h-full flex flex-col justify-end p-8 text-white">
+                <p class="text-xs tracking-[0.35em] mb-2 opacity-80">
+                  HYPNOSIS · ILLUSTRATION · INNER SPACE
+                </p>
+                <h3 class="text-xl font-semibold mb-2">心映好事工作室</h3>
+                <p class="text-xs leading-relaxed opacity-90">
+                  這裡是一個可以把情緒放下來的地方，
+                  讓你暫時離開日常的角色，好好回到「只是自己」的狀態。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 區塊 06｜誰適合探索潛意識？ 三拱門卡 ========== -->
+      <section class="pb-16 sm:pb-20">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 text-center mb-10">
+          <p class="text-xs tracking-[0.35em] mb-2">WHO IS THIS FOR</p>
+          <h2 class="text-2xl sm:text-3xl font-semibold mb-2">
+            誰適合探索潛意識？
+          </h2>
+          <p class="text-sm leading-relaxed max-w-xl mx-auto">
+            你不需要「狀況很嚴重」才可以來。
+            只要你渴望更懂自己、想停止一再重複的循環，就很適合。
+          </p>
         </div>
 
-        <div class="about-visual">
-          <div class="about-arch">
+        <div
+          class="max-w-6xl mx-auto px-4 lg:px-6 grid md:grid-cols-3 gap-6 md:gap-8"
+        >
+          <!-- 卡 1 鑰匙 -->
+          <div
+            class="arch-card bg-brandBg border border-brandDark/10 shadow-soft flex flex-col items-center pt-10 pb-8 px-6"
+          >
             <img
               src="https://singingtsai.com/wp-content/uploads/2025/03/index_con6_door_img01.webp"
-              alt="綠色拱門圖像"
-              class="about-arch-img"
+              alt="總是把自己放在最後的人"
+              class="w-full max-w-[220px] mb-4"
             />
-            <img
-              src="https://singingtsai.com/wp-content/uploads/2025/03/logo_NGH_w200.svg"
-              alt="NGH Logo"
-              class="about-ngh"
-            />
+            <h3 class="text-sm font-medium mb-2">習慣把自己放在最後的人</h3>
+            <p class="text-xs leading-relaxed opacity-80">
+              很會照顧別人，卻很少照顧自己，
+              總是覺得「我還可以再撐一下」。
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ====================  區塊 06：誰適合探索？  ==================== -->
-    <section class="section section-who">
-      <div class="container">
-        <h2 class="section-title section-title-center">
-          誰適合探索潛意識？
-        </h2>
-
-        <div class="who-grid">
-          <article class="who-card">
-            <img
-              src="https://singingtsai.com/wp-content/uploads/2025/03/index_con6_door_img01.webp"
-              alt="鑰匙"
-            />
-            <h3>總是對自己要求很多的人</h3>
-          </article>
-
-          <article class="who-card">
+          <!-- 卡 2 星星 -->
+          <div
+            class="arch-card bg-brandBg border border-brandDark/10 shadow-soft flex flex-col items-center pt-10 pb-8 px-6"
+          >
             <img
               src="https://singingtsai.com/wp-content/uploads/2025/03/logo_166-1.svg"
-              alt="星星"
+              alt="對內在成長有興趣的人"
+              class="w-full max-w-[220px] mb-4"
             />
-            <h3>感覺卡在關鍵轉折點的人</h3>
-          </article>
+            <h3 class="text-sm font-medium mb-2">對內在成長有興趣的人</h3>
+            <p class="text-xs leading-relaxed opacity-80">
+              喜歡閱讀、寫字、自我覺察，
+              想把這些內在練習再往前走一點點。
+            </p>
+          </div>
 
-          <article class="who-card">
+          <!-- 卡 3 月亮 -->
+          <div
+            class="arch-card bg-brandBg border border-brandDark/10 shadow-soft flex flex-col items-center pt-10 pb-8 px-6"
+          >
             <img
               src="https://singingtsai.com/wp-content/uploads/2025/03/index_con6_door_img03.webp"
-              alt="月亮"
+              alt="在人生轉彎處的人"
+              class="w-full max-w-[220px] mb-4"
             />
-            <h3>正在練習好好照顧自己的人</h3>
-          </article>
+            <h3 class="text-sm font-medium mb-2">在人生轉彎處的人</h3>
+            <p class="text-xs leading-relaxed opacity-80">
+              正在做重要決定、準備做出改變，
+              想要一個溫柔、但踏實的陪伴。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 區塊 07｜讓我們談談 CTA ========== -->
+      <section class="pb-20">
+        <div
+          class="max-w-6xl mx-auto px-4 lg:px-6 rounded-3xl overflow-hidden shadow-soft bg-[#ddd8d3] relative"
+        >
+          <div
+            class="absolute inset-0 bg-center bg-cover opacity-70"
+            style="background-image: url('https://singingtsai.com/wp-content/uploads/2025/03/reservetion_img-1.webp');"
+          ></div>
+
+          <div
+            class="relative py-12 sm:py-16 px-6 sm:px-10 lg:px-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8"
+          >
+            <div>
+              <p class="text-xs tracking-[0.35em] mb-3">LET&#39;S TALK</p>
+              <h2 class="text-2xl sm:text-3xl font-semibold mb-3">
+                讓我們談談，
+                <br class="hidden sm:block" />
+                還有什麼可能？
+              </h2>
+              <p class="text-sm leading-relaxed max-w-md">
+                如果你還不確定自己適不適合催眠，或是想先聊聊自己的狀況，
+                也可以先寫信、或透過 LINE 找我。我會用你的速度，一起看看可以怎麼走下去。
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-3">
+              <a
+                href="booking.html"
+                class="inline-flex items-center gap-2 text-xs tracking-[0.2em] bg-brandDark text-brandBg px-5 py-3 rounded-full shadow-soft hover:bg-black transition"
+              >
+                <span
+                  class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brandBg text-brandDark text-lg"
+                >
+                  ↗
+                </span>
+                <span class="flex flex-col text-left leading-relaxed">
+                  <span>預約一場屬於你的談談</span>
+                  <span class="text-[11px] opacity-80">
+                    線上一對一催眠 / 先聊聊也可以
+                  </span>
+                </span>
+              </a>
+
+              <a
+                href="https://lin.ee/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-xs tracking-[0.2em] bg-white/80 text-brandDark px-5 py-2.5 rounded-full hover:bg-white transition"
+              >
+                加入 LINE 先跟我說說
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================= Footer ======================= -->
+    <footer class="border-t border-[#c3a9a8] bg-brandBg py-8 sm:py-9 mt-4">
+      <div
+        class="max-w-6xl mx-auto px-4 lg:px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs leading-relaxed"
+      >
+        <div class="space-y-1">
+          <p class="font-medium">心映好事</p>
+          <p>
+            蔡心怡 / Singing Tsai 客服信箱：
+            <a
+              href="mailto:luckystern16@gmail.com"
+              class="underline underline-offset-2"
+              >luckystern16@gmail.com</a
+            >
+          </p>
+          <p>TEL：02-24516767</p>
+        </div>
+
+        <div class="space-y-2 sm:text-right">
+          <div class="flex sm:justify-end gap-2 mb-1">
+            <!-- 社群 icon：這裡先用文字圈圈，你之後可以換成 SVG -->
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-brandDark/40 text-[11px]"
+              >F</a
+            >
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-brandDark/40 text-[11px]"
+              >IG</a
+            >
+            <a
+              href="https://lin.ee"
+              target="_blank"
+              class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-brandDark/40 text-[11px]"
+              >LINE</a
+            >
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-brandDark/40 text-[11px]"
+              >YT</a
+            >
+            <a
+              href="https://medium.com"
+              target="_blank"
+              class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-brandDark/40 text-[11px]"
+              >M</a
+            >
+          </div>
+
+          <p>
+            所有內容版權所有 ©Copyright Singingtsai. All Rights Reserved.
+          </p>
+          <p>
+            <a href="privacy.html" class="underline underline-offset-2">
+              隱私權政策與使用條款
+            </a>
+          </p>
         </div>
       </div>
-    </section>
-
-    <!-- ====================  區塊 07：讓我們談談  ==================== -->
-    <section class="section section-cta">
-      <div class="cta-bg">
-        <img
-          src="https://singingtsai.com/wp-content/uploads/2025/03/reservetion_img-1.webp"
-          alt="光芒背景"
-        />
-      </div>
-
-      <div class="container cta-inner">
-        <h2 class="section-title">讓我們談談，還有什麼可能？</h2>
-        <p class="section-body">
-          不一定要「很嚴重」，你也可以來這裡。<br />
-          有時候，只是想找一個安全的地方，把那些還說不出口的心事放下來。
-        </p>
-
-        <a href="booking.html" class="btn-link">
-          <span class="btn-icon">↗</span>
-          <span class="btn-text">寫信或 LINE 跟我說說</span>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <!-- ====================  Footer  ==================== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <p class="footer-brand">● 心映好事</p>
-        <p>
-          蔡心怡 / Singing Tsai 客服信箱：
-          <a href="mailto:luckystern16@gmail.com">luckystern16@gmail.com</a>
-          <span class="footer-separator">TEL：02-24516767</span>
-        </p>
-      </div>
-
-      <div class="footer-right">
-        <p class="footer-copy">
-          所有內容版權所有 ©Copyright Singingtsai. All Rights Reserved.
-        </p>
-        <a
-          href="https://singingtsai.com/privacy-policy"
-          target="_blank"
-          class="footer-privacy"
-          >隱私權政策與使用條款</a
-        >
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
